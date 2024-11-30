@@ -7,10 +7,10 @@ const GradientDiv = styled('div')({
     background: `linear-gradient(
         to bottom, 
         ${theme.palette.commonColors.lightest} 0%,
-        ${theme.palette.commonColors.lighter} 40%,
-        ${theme.palette.commonColors.light} 65%,
-        ${theme.palette.commonColors.dark} 80%,
-        ${theme.palette.commonColors.darker} 90%,
+        ${theme.palette.commonColors.lighter} 70%,
+        ${theme.palette.commonColors.light} 90%,
+        ${theme.palette.commonColors.dark} 95%,
+        ${theme.palette.commonColors.darker} 98%,
         ${theme.palette.commonColors.darkest}  100%
     )`,
 });
