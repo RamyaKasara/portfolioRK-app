@@ -1,7 +1,7 @@
 import { styled } from '@mui/material';
 import theme from '../theme.js';
 
-const GradientDiv = styled('div')({
+const PageDiv = styled('div')({
     flexGrow: 1,
     width: '100%',
     background: theme.palette.background.primary,
@@ -9,9 +9,9 @@ const GradientDiv = styled('div')({
 
 function GradientCard({children}) {
     return ( 
-        <GradientDiv>
+        <PageDiv>
             {children}
-        </GradientDiv>
+        </PageDiv>
      );
 }
 

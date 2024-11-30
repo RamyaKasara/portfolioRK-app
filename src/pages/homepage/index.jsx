@@ -1,6 +1,6 @@
 import { styled, Typography } from '@mui/material';
 import Navbar from '../../components/navbar.jsx';
-import GradientCard from '../../components/gradientCard.jsx';
+import GradientCard from '../../components/pageBody.jsx';
 import theme from '../../theme.js';
 
 function HomePage() {
