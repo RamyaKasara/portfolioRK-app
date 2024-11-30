@@ -11,14 +11,13 @@ const theme = createTheme({
       light: '#4a5c6a',
     },
     background: {
-      primary: '#06141b', // Main background color
-      secondary: '#11212d', // Secondary background color
-      tertiary: '#253745', // Tertiary background color
+      primary: '#eef4ce', //sand page background
+      secondary: '#c0ae94',
+      tertiary: '#e79f31', // mustard yellow tag background
     },
     text: {
-      primary: '#ccd0cf', // Main text color
-      secondary: '#9babab', // Secondary text color
-      tertiary: '#4a5c6a', // Tertiary text color
+      primary: '#222217', // olive wood text background
+      secondary: '#383838', 
     },
   },
   typography: {

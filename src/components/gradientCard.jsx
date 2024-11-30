@@ -4,24 +4,14 @@ import theme from '../theme.js';
 const GradientDiv = styled('div')({
     flexGrow: 1,
     width: '100%',
-    background: `linear-gradient(
-        to bottom, 
-        ${theme.palette.commonColors.lightest} 0%,
-        ${theme.palette.commonColors.lighter} 70%,
-        ${theme.palette.commonColors.light} 90%,
-        ${theme.palette.commonColors.dark} 95%,
-        ${theme.palette.commonColors.darker} 98%,
-        ${theme.palette.commonColors.darkest}  100%
-    )`,
+    background: theme.palette.background.primary,
 });
 
-function GradientCard() {
+function GradientCard({children}) {
     return ( 
         <GradientDiv>
-            {/* replace with the Paper element in MUI */}
-            card
+            {children}
         </GradientDiv>
-        
      );
 }
 

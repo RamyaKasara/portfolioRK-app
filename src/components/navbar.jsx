@@ -11,13 +11,15 @@ import React, { useState } from "react";
 const NavigationAppBar = styled(AppBar)(({ theme }) => ({
     backgroundColor: theme.palette.background.primary,
     color: theme.palette.text.primary,
+    boxShadow: 'none', 
 }))
 
 const StyledMenu = styled(Menu)(({ theme }) => ({
     "& .MuiPaper-root": {
-        backgroundColor: theme.palette.background.secondary, // Secondary background color
+        backgroundColor: theme.palette.background.primary, // Secondary background color
         color: theme.palette.text.primary, // Primary text color
-        opacity: 0.8, // Opacity of the menu
+        opacity: 0.8, // Opacity of the menu,
+        boxShadow: 'none', // Remove box shadow
     },
 }))
 
@@ -26,6 +28,19 @@ const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
         backgroundColor: theme.palette.background.primary, 
     },
 }))
+
+const TagButton = styled(Button)(({ theme }) => ({
+  borderRadius: '16px',
+  padding: '4px 12px',
+  border: `1px solid ${theme.palette.background.tertiary}`,
+  textTransform: 'none',
+  fontWeight: 'bold',
+  backgroundColor: theme.palette.background.tertiary,
+  '&:hover': {
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    },
+  color: theme.palette.background.primary,
+}));
 
 
 function Navbar() {
@@ -64,15 +79,15 @@ function Navbar() {
                     <Typography
                         variant="h6"
                         component="div"
-                        sx={{ flexGrow: 1 }}
+                        sx={{ flexGrow: 1, fontWeight: 'bold' }}
                     >
-                        Ramya's Portfolio
+                        Ramya Kasara
                     </Typography>
                     {   !isMobile &&
                         (<>
-                            <Button color="inherit">Home</Button>
-                            <Button color="inherit">About</Button>
-                            <Button color="inherit">Contact</Button>
+                            <Button color="inherit">About Me</Button>
+                            <Button color="inherit">Resume</Button>
+                            <TagButton color="inherit">Hit Me Up!</TagButton>
                         </>)
                     }
                 </Toolbar>
@@ -86,9 +101,9 @@ function Navbar() {
                             <Button color="inherit">About</Button>
                             <Button color="inherit">Contact</Button> */}
                         {/* Menu items will stack vertically */}
-                        <StyledMenuItem onClick={toggleMenuClose}>Home</StyledMenuItem>
-                        <StyledMenuItem onClick={toggleMenuClose}>About</StyledMenuItem>
-                        <StyledMenuItem onClick={toggleMenuClose}>Contact</StyledMenuItem>
+                        <StyledMenuItem onClick={toggleMenuClose}>About Me</StyledMenuItem>
+                        <StyledMenuItem onClick={toggleMenuClose}>Resume</StyledMenuItem>
+                        <StyledMenuItem onClick={toggleMenuClose}>Hit Me Up!</StyledMenuItem>
                     </StyledMenu>)
                 }
             </NavigationAppBar>
