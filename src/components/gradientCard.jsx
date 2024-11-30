@@ -2,16 +2,16 @@ import { styled } from '@mui/material';
 import theme from '../theme.js';
 
 const GradientDiv = styled('div')({
-    height: '30%',
-    width: '50%',
+    flexGrow: 1,
+    width: '100%',
     background: `linear-gradient(
         to bottom, 
-        ${theme.palette.commonColors.lightest}, /* Lightest */
-        ${theme.palette.commonColors.lighter}, /* Lighter */
-        ${theme.palette.commonColors.light}, /* Light */
-        ${theme.palette.commonColors.dark}, /* Dark */
-        ${theme.palette.commonColors.darker}, /* Darker */
-        ${theme.palette.commonColors.darkest}  /* Darkest */
+        ${theme.palette.commonColors.lightest} 0%,
+        ${theme.palette.commonColors.lighter} 40%,
+        ${theme.palette.commonColors.light} 65%,
+        ${theme.palette.commonColors.dark} 80%,
+        ${theme.palette.commonColors.darker} 90%,
+        ${theme.palette.commonColors.darkest}  100%
     )`,
 });
 

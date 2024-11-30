@@ -48,7 +48,7 @@ function Navbar() {
 
     return ( 
         <>
-            <NavigationAppBar position="sticky">
+            <NavigationAppBar position="sticky" style={{flexShrink: 0}}>
                 <Toolbar>
                     { isMobile &&
                         (<IconButton
