@@ -22,8 +22,8 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: '"Noto Sans SC", "Roboto", "Helvetica", "Arial", sans-serif',
-    body1: {
-      fontSize:'0.875rem',
+    body14: {
+      fontSize:'1rem',
     },
     h3: {
       fontSize: '1.875rem',
