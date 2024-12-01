@@ -30,16 +30,28 @@ const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
 }))
 
 const TagButton = styled(Button)(({ theme }) => ({
-  borderRadius: '16px',
-  padding: '4px 12px',
-  border: `1px solid ${theme.palette.background.tertiary}`,
-  textTransform: 'none',
-  fontWeight: 'bold',
-  backgroundColor: theme.palette.background.tertiary,
-  '&:hover': {
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    borderRadius: '16px',
+    padding: '4px 12px',
+    border: `1px solid ${theme.palette.background.tertiary}`,
+    textTransform: 'none',
+    fontWeight: 'bold',
+    backgroundColor: theme.palette.background.tertiary,
+    color: theme.palette.background.primary,
+    '&:hover': {
+        backgroundColor: theme.palette.background.primary, // Change background on hover
+        borderColor: theme.palette.text.primary, // Change border color on hover
+        color: theme.palette.text.primary, // Change text color on hover
+        transform: 'scale(1.05)', // Slightly enlarge the button for effect
+        transition: 'all 0.3s ease', // Smooth transition for hover effects
     },
-  color: theme.palette.background.primary,
+}));
+
+const RegularButton = styled(Button)(({ theme }) => ({
+    '&:hover': {
+        transform: 'scale(1.05)',
+        transition: 'transform 0.2s cubic-bezier(0.25, 1, 0.5, 1)',
+        backgroundColor: theme.palette.background.primary,
+    },
 }));
 
 
@@ -85,8 +97,8 @@ function Navbar() {
                     </Typography>
                     {   !isMobile &&
                         (<>
-                            <Button color="inherit">About Me</Button>
-                            <Button color="inherit">Resume</Button>
+                            <RegularButton color="inherit">About Me</RegularButton>
+                            <RegularButton color="inherit">Resume</RegularButton>
                             <TagButton color="inherit">Hit Me Up!</TagButton>
                         </>)
                     }
