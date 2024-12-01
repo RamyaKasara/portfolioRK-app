@@ -21,14 +21,13 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif', // Font family
-    h1: {
-      fontSize: '2.5rem',
-      fontWeight: 700,
-    },
+    fontFamily: '"Noto Sans SC", "Roboto", "Helvetica", "Arial", sans-serif',
     body1: {
-      fontSize: '1rem',
+      fontSize:'0.875rem',
     },
+    h3: {
+      fontSize: '1.875rem',
+    }
   },
 });
 

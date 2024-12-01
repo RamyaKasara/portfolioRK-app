@@ -77,9 +77,9 @@ function Navbar() {
                             <MenuIcon />
                         </IconButton>)}
                     <Typography
-                        variant="h6"
+                        variant="h3"
                         component="div"
-                        sx={{ flexGrow: 1, fontWeight: 'bold' }}
+                        sx={{ flexGrow: 1, fontWeight: '600', fontFamily: "Old Standard TT" }}
                     >
                         Ramya Kasara
                     </Typography>
