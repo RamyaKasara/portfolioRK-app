@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme, styled } from "@mui/material/styles";
-import { Menu, MenuItem, useMediaQuery } from "@mui/material";
+import { Menu, MenuItem, Box, useMediaQuery } from "@mui/material";
 import React, { useState } from "react";
 
 const NavigationAppBar = styled(AppBar)(({ theme }) => ({
@@ -48,8 +48,7 @@ const TagButton = styled(Button)(({ theme }) => ({
 
 const RegularButton = styled(Button)(({ theme }) => ({
     '&:hover': {
-        transform: 'scale(1.05)',
-        transition: 'transform 0.2s cubic-bezier(0.25, 1, 0.5, 1)',
+        transform: 'scale(1.04)',
         backgroundColor: theme.palette.background.primary,
     },
 }));
@@ -96,11 +95,11 @@ function Navbar() {
                         Ramya Kasara
                     </Typography>
                     {   !isMobile &&
-                        (<>
+                        (<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                             <RegularButton color="inherit">About Me</RegularButton>
                             <RegularButton color="inherit">Resume</RegularButton>
                             <TagButton color="inherit">Hit Me Up!</TagButton>
-                        </>)
+                        </Box>)
                     }
                 </Toolbar>
                 {   (!isMobile || isMenuOpen) &&
