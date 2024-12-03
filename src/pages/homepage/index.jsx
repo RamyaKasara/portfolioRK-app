@@ -1,4 +1,4 @@
-import { styled, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Navbar from '../../components/navbar.jsx';
 import PageBody from '../../components/pageBody.jsx';
 import theme from '../../theme.js';
@@ -13,12 +13,12 @@ function HomePage() {
                     <Typography 
                     variant="h1" 
                     component="h1" 
-                    style={{ 
+                    sx={{ 
                     color: theme.palette.text.primary, 
                     textAlign: 'center', 
                     fontFamily: "Old Standard TT", 
                     fontWeight: '400',
-                    fontSize: '150px', 
+                    fontSize: {  xs: '5rem' ,md:'9.375rem' }, 
                     position: 'relative', 
                     zIndex: 1 
                     }}
@@ -29,11 +29,11 @@ function HomePage() {
                     <Typography 
                     variant="h1" 
                     component="h1" 
-                    style={{ 
+                    sx={{ 
                     color: theme.palette.background.tertiary, 
                     textAlign: 'center', 
                     fontFamily: "Londrina Sketch", 
-                    fontSize: '170px', 
+                    fontSize: { xs: '5.67rem',md:'10.625rem'}, 
                     position: 'absolute', 
                     top: '10px', // Adjust for vertical overlap
                     left: '50%', // Center horizontally
@@ -45,8 +45,11 @@ function HomePage() {
                     </Typography>
                 </div>
                 <div style={{ position: 'relative', textAlign: 'center'}}>
-                    <img src={bulbMicron} alt="bulb-micron" style={{ height: '400px' }}/>
-                    <div style={{ position: 'absolute', textAlign: 'center', bottom: '-25px', // Adjust to place the text near the bottom of the image
+                    <img src={bulbMicron} alt="bulb-micron" style={{ height: '25rem' }}/>
+                    <Box sx={{
+                        position: 'absolute',
+                        textAlign: 'center',
+                        bottom: { xs:'-4.062rem' , md: '-1.562rem' }, // Adjust to place the text near the bottom of the image
                         left: '50%', // Center horizontally
                         transform: 'translateX(-50%)', // Correct centering
                         zIndex: 2 // Ensure the text appears above the image
@@ -63,7 +66,7 @@ function HomePage() {
                         >
                         Frontend Developer
                         </Typography>
-                    </div>
+                    </Box>
                 </div>
                 <div style={{ margin: '20px auto', width: '50%',textAlign: 'center' }}>
                     <Typography variant='body1'> 
