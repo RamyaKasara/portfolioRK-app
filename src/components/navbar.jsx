@@ -76,24 +76,23 @@ function Navbar() {
         <>
             <NavigationAppBar position="sticky" style={{flexShrink: 0}}>
                 <Toolbar>
-                    { isMobile &&
-                        (<IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            onClick={toggleMenuOpen}
-                            sx={{ mr: 2, cursor: "pointer"}}
-                        >
-                            <MenuIcon />
-                        </IconButton>)}
                     <Typography
-                        variant="h3"
+                        variant="h3_1"
                         component="div"
                         sx={{ flexGrow: 1, fontWeight: '600', fontFamily: "Old Standard TT" }}
                     >
                         Ramya Kasara
                     </Typography>
+                    { isMobile &&
+                        (<IconButton
+                            size="large"
+                            edge="start"
+                            aria-label="menu"
+                            onClick={toggleMenuOpen}
+                            sx={{cursor: "pointer", color: theme.palette.text.primary, padding: '0px'}}
+                        >
+                            <MenuIcon />
+                        </IconButton>)}
                     {   !isMobile &&
                         (<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                             <RegularButton color="inherit">About Me</RegularButton>

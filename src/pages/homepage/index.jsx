@@ -48,8 +48,9 @@ function HomePage() {
                     <img src={bulbMicron} alt="bulb-micron" style={{ height: '25rem' }}/>
                     <Box sx={{
                         position: 'absolute',
+                        width: { xs: '90%', md: '50%' },
                         textAlign: 'center',
-                        bottom: { xs:'-4.062rem' , md: '-1.562rem' }, // Adjust to place the text near the bottom of the image
+                        bottom: '-1.562rem', // Adjust to place the text near the bottom of the image
                         left: '50%', // Center horizontally
                         transform: 'translateX(-50%)', // Correct centering
                         zIndex: 2 // Ensure the text appears above the image
@@ -61,18 +62,18 @@ function HomePage() {
                         color: theme.palette.text.primary, 
                         textAlign: 'center', 
                         fontFamily: "Old Standard TT", 
-                        fontSize: '40px' 
+                        fontSize: { xs:'2rem', md:'2.5rems'} 
                         }}
                         >
                         Frontend Developer
                         </Typography>
                     </Box>
                 </div>
-                <div style={{ margin: '20px auto', width: '50%',textAlign: 'center' }}>
+                <Box sx={{ margin:'20px auto', width: { xs: '90%', md: '50%' }, textAlign: 'center' }}>
                     <Typography variant='body1'> 
                         Blending creativity with problem solving and a passion for technology to craft beautiful and functional user interfaces. 
                     </Typography>
-                </div>
+                </Box>
             </PageBody>
         </div>
      );

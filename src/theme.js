@@ -25,12 +25,12 @@ const theme = createTheme({
     body1: {
       fontSize:'1rem',
     },
-    h3: {
+    h3_1: {
       fontSize: '1.875rem',
       '@media (max-width:600px)': {
         fontSize: '1.25rem', // Medium screen size
       },
-    }
+    },
   },
 });
 
