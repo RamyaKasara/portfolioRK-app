@@ -7,6 +7,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme, styled } from "@mui/material/styles";
 import { Menu, MenuItem, Box, useMediaQuery } from "@mui/material";
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const NavigationAppBar = styled(AppBar)(({ theme }) => ({
     backgroundColor: theme.palette.background.primary,
@@ -92,6 +95,7 @@ function Navbar() {
         setAnchorEl(null);
     };
 
+    const navigate = useNavigate();
 
     return ( 
         <>
@@ -117,7 +121,7 @@ function Navbar() {
                         </IconButton>)}
                     {   !isMobile &&
                         (<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                            <RegularButton color="inherit">About Me</RegularButton>
+                            <RegularButton color="inherit" onClick={() => navigate('/about-me')} >About Me</RegularButton>
                             <RegularButton color="inherit">Resume</RegularButton>
                             <TagButton color="inherit">Hit Me Up!</TagButton>
                         </Box>)
@@ -133,7 +137,7 @@ function Navbar() {
                             <Button color="inherit">About</Button>
                             <Button color="inherit">Contact</Button> */}
                         {/* Menu items will stack vertically */}
-                        <StyledMenuItem onClick={toggleMenuClose}>About Me</StyledMenuItem>
+                    <StyledMenuItem onClick={() => { navigate('/about-me'); toggleMenuClose(); }}>About Me</StyledMenuItem>
                         <StyledMenuItem onClick={toggleMenuClose}>Resume</StyledMenuItem>
                         <StyledMenuItem onClick={toggleMenuClose}>Hit Me Up!</StyledMenuItem>
                     </StyledMenu>)
