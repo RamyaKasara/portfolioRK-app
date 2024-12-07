@@ -19,13 +19,19 @@ const StyledMenu = styled(Menu)(({ theme }) => ({
         backgroundColor: theme.palette.background.primary, // Secondary background color
         color: theme.palette.text.primary, // Primary text color
         opacity: 0.8, // Opacity of the menu,
-        boxShadow: 'none', // Remove box shadow
     },
 }))
 
 const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
     "&:hover": {
         backgroundColor: theme.palette.background.primary, 
+    },
+    '&:active': {
+        backgroundColor: theme.palette.background.primary, 
+        borderColor: theme.palette.text.primary, 
+        color: theme.palette.text.primary, 
+        transform: 'scale(1.05)', 
+        transition: 'all 0.3s ease', 
     },
 }))
 
@@ -44,13 +50,28 @@ const TagButton = styled(Button)(({ theme }) => ({
         transform: 'scale(1.05)', // Slightly enlarge the button for effect
         transition: 'all 0.3s ease', // Smooth transition for hover effects
     },
+    //after clicking on the button
+    '&:active': {
+        backgroundColor: theme.palette.background.primary, 
+        borderColor: theme.palette.text.primary, 
+        color: theme.palette.text.primary, 
+        transform: 'scale(1.05)', 
+        transition: 'all 0.3s ease', 
+    },
+    '&:focus': {
+        outline: 'none', // Remove the default outline
+    },
 }));
 
 const RegularButton = styled(Button)(({ theme }) => ({
+    borderRadius: '16px',
     '&:hover': {
         transform: 'scale(1.04)',
         backgroundColor: theme.palette.background.primary,
     },
+    '&:focus': {
+        outline: 'none',
+    }
 }));
 
 
@@ -91,7 +112,8 @@ function Navbar() {
                             onClick={toggleMenuOpen}
                             sx={{cursor: "pointer", color: theme.palette.text.primary, padding: '0px'}}
                         >
-                            <MenuIcon />
+                        {/* <MenuIcon /> */}
+                            <TagButton color="inherit">Menu</TagButton>
                         </IconButton>)}
                     {   !isMobile &&
                         (<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
