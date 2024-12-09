@@ -27,6 +27,8 @@ const theme = createTheme({
     },
     h3_1: {
       fontSize: '1.875rem',
+      fontFamily: '"Old Standard TT", serif',
+      fontWeight: '600',
       '@media (max-width:600px)': {
         fontSize: '1.25rem', // Medium screen size
       },

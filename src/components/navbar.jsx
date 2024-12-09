@@ -104,7 +104,7 @@ function Navbar() {
                     <Typography
                         variant="h3_1"
                         component="div"
-                        sx={{ flexGrow: 1, fontWeight: '600', fontFamily: "Old Standard TT" }}
+                        sx={{ flexGrow: 1 }}
                     >
                         Ramya Kasara
                     </Typography>
