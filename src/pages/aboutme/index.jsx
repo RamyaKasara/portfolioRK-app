@@ -11,8 +11,12 @@ function AboutMePage() {
         <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
             <Navbar />
             <PageBody>  
-                <Grid container spacing={2} sx={{ height: { md: '25rem', lg:'35rem' }, margin:{ xs:'2rem', md: '5rem'} }}>
-                    <Grid size={6} sx={{ height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+                <Grid container spacing={2}
+                    sx={{
+                        height: { md: '25rem', lg: '35rem' },
+                        margin: { xs: '2rem', md: '5rem' },
+                    }}>
+                    <Grid item size={{ xs:12, md:6 }} sx={{ height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                         <Box sx={{
                             margin: { md:'2rem', lg:'2rem 3rem'},
                             display: 'flex', flexDirection: 'column',
@@ -34,10 +38,10 @@ function AboutMePage() {
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid size={6} sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <Grid item size={{ xs: 12, md: 6 }} sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                         <Box sx={{
                             margin: { md:'0 2rem', lg:'0 3rem'},
-                            width: { xs: '50%', lg: '40%' },
+                            width: { xs:'100%', sm: '50%', lg: '40%' },
                             backgroundColor: theme.palette.background.tertiary,
                             borderRadius: '10px 10px 0 0s',
                             height: '100%',
@@ -56,7 +60,7 @@ function AboutMePage() {
                         </Box>
                         <Box sx={{
                             margin: { md:'0 2rem', lg:'0 3rem'},
-                            width: { xs: '50%', lg: '40%' },
+                            width: { xs:'100%' ,sm: '50%', lg: '40%' },
                             backgroundColor: theme.palette.text.primary,
                             color: theme.palette.background.primary,
                             display: 'flex',
