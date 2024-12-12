@@ -1,13 +1,10 @@
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import { useTheme, styled } from "@mui/material/styles";
-import { Menu, MenuItem, Box, useMediaQuery } from "@mui/material";
+// 1. Core/Library Imports
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+// 2. MUI Component Imports
+import {AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography, useMediaQuery } from "@mui/material";
+// 3. MUI Utility Imports
+import { useTheme, styled } from "@mui/material/styles";
 
 
 

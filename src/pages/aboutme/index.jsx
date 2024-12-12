@@ -1,10 +1,19 @@
-import { Box, Typography, Grid2 as Grid } from '@mui/material';
+// 1. Core/Library Imports
+import { Box, Grid2 as Grid, Typography } from '@mui/material';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import PlaceIcon from '@mui/icons-material/Place';
+
+// 2. Component Imports
 import Navbar from '../../components/navbar.jsx';
 import Page from '../../components/page.jsx';
+import Education from './education.jsx';
+
+// 3. Theme Imports
 import theme from '../../theme.js';
+
+// 4. Asset Imports
 import ghostyMicron from './assets/images/ghosty-books-micron.png';
-import PlaceIcon from '@mui/icons-material/Place';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 
 function AboutMePage() {
     return ( 
@@ -112,8 +121,8 @@ function AboutMePage() {
                     </Grid>
                 </Grid>
             </Page>
-            <Page background={theme.palette.text.primary} height={'45rem'} >
-                        <p>Here</p>
+            <Page background={theme.palette.background.tertiary}>
+                <Education />
             </Page>
         </div>
      );

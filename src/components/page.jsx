@@ -4,7 +4,7 @@ import theme from '../theme.js';
 const PageBox = styled(Box)(({ background, height, width }) => ({
     flexGrow: 1,
     width: width || '100%',
-    height: height || 'auto',
+    minHeight: height || 'auto',
     background: background || theme.palette.background.primary,
 }));
 
