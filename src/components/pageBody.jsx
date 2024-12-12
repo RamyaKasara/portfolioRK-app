@@ -1,18 +1,18 @@
 import { styled } from '@mui/material';
 import theme from '../theme.js';
 
-const PageDiv = styled('div')({
+const PageDiv = styled('div')(({ background }) => ({
     flexGrow: 1,
     width: '100%',
-    background: theme.palette.background.primary,
-});
+    background: background || theme.palette.background.primary,
+}));
 
-function GradientCard({children}) {
+function PageBody({children, background}) {
     return ( 
-        <PageDiv>
+        <PageDiv background={background}>
             {children}
         </PageDiv>
      );
 }
 
-export default GradientCard;
+export default PageBody;
