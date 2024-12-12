@@ -1,6 +1,7 @@
 // 1. Core/Library Imports
 import { Box, Grid2 as Grid, Typography } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
 
 // 2. Component Imports
@@ -22,8 +23,8 @@ function AboutMePage() {
             <Page>  
                 <Grid container spacing={2}
                     sx={{
-                        height: { md: '25rem', lg: '35rem' },
-                        margin: { xs: '2rem', md: '5rem' },
+                        height: { md: '25rem', lg: '28rem' },
+                        margin: { xs: '2rem' },
                     }}>
                     <Grid item size={{ xs:12, md:6 }} sx={{ height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                         <Box sx={{
@@ -47,13 +48,12 @@ function AboutMePage() {
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid item size={{ xs: 12, md: 6 }} sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <Grid item size={{ xs: 12, md: 6 }}  sx={{ mt:{md:'6rem'}, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                         <Box sx={{
-                            margin: { md:'0 2rem', lg:'0 3rem'},
-                            width: { xs:'65%', sm: '50%', lg: '40%' },
+                            width: { xs:'65%', sm: '50%', lg: '38%' },
                             backgroundColor: theme.palette.background.tertiary,
                             borderRadius: '10px 10px 0 0s',
-                            height: '100%',
+                            minHeight: { xs: '20rem', md: '26rem', lg: '28rem' },
                             display: 'flex',
                             justifyContent: 'center',
                         }}>
@@ -63,13 +63,12 @@ function AboutMePage() {
                                 alt="ghosty-books-micron"
                                 sx={{
                                     paddingTop: '5px',
-                                    height: { xs: '20rem', md: '24rem', lg: '28rem' }, // Responsive height
+                                    minHeight: { xs: '20rem', md: '26rem', lg: '28rem' }, // Responsive height
                                 }}
                             />
                         </Box>
                         <Box sx={{
-                            margin: { md:'0 2rem', lg:'0 3rem'},
-                            width: { xs:'65%' ,sm: '50%', lg: '40%' },
+                            width: { xs:'65%' ,sm: '50%', lg: '38%' },
                             backgroundColor: theme.palette.text.primary,
                             color: theme.palette.background.primary,
                             display: 'flex',
@@ -77,7 +76,8 @@ function AboutMePage() {
                             justifyContent: 'center',
                             alignItems: 'center',
                             gap: '10px',
-                            padding: '0.5rem',
+                            padding: '0.9rem 0.5rem',
+                            zIndex: 1,
                         }}>
                             <Typography variant="h3_1" component="p">
                                 Contact
@@ -98,6 +98,16 @@ function AboutMePage() {
                                         </Grid>
                                     </Grid>
 
+                                    {/* Mail */}
+                                    <Grid container item xs={12}>
+                                        <Grid item xs={3}>
+                                            <EmailIcon sx={{ fontSize: '1.5rem', color: theme.palette.background.primary }} />
+                                        </Grid>
+                                        <Grid item xs={9}>
+                                            <div style={{ margin: '0' }}>Email me</div>
+                                        </Grid>
+                                    </Grid>
+
                                     {/* LinkedIn */}
                                     <Grid container item xs={12}>
                                         <Grid item xs={3}>
@@ -110,7 +120,7 @@ function AboutMePage() {
                                                 rel="noreferrer"
                                                 style={{ textDecoration: 'none', color: theme.palette.background.primary }}
                                             >
-                                                Connect with me!
+                                                Connect with me
                                             </a>
                                         </Grid>
                                     </Grid>
@@ -122,7 +132,15 @@ function AboutMePage() {
                 </Grid>
             </Page>
             <Page background={theme.palette.background.tertiary}>
-                <Education />
+                <Box
+                    sx={{
+                        width: { md: '50%', lg: '40%' },
+                        height: { md: '25rem', lg: '34rem' },
+                        margin: { xs: '2rem', md: '5rem' },
+                    }}
+                >
+                    <Education />
+                </Box>
             </Page>
         </div>
      );
