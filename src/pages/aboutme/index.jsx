@@ -70,17 +70,40 @@ function AboutMePage() {
                                 Contact
                             </Typography>
                             <Typography variant="body1" component="div">
-                                <Box sx={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', alignItems: 'center' }}>
-                                    <PlaceIcon sx={{ fontSize: '1.5rem', color: theme.palette.background.primary }} />
-                                    <div style={{margin:'0'}}>Bangalore, India</div>
-                                </Box>
-                                <Box sx={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', alignItems: 'center' }}>
-                                    <LinkedInIcon sx={{ fontSize: '1.5rem', color: theme.palette.background.primary }} />
-                                    <a href="https://www.linkedin.com/in/ramya-kasarabada-322734239/" target="_blank" rel="noreferrer"
-                                        style={{ textDecoration: 'none', color: theme.palette.background.primary }}
-                                    >Connect with me!</a>
-                                </Box>
+                                <Grid 
+                                    container 
+                                    spacing={2} // Adds spacing between grid items
+                                    sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}
+                                >
+                                    {/* Location */}
+                                    <Grid container item xs={12}>
+                                        <Grid item xs={3}>
+                                            <PlaceIcon sx={{ fontSize: '1.5rem', color: theme.palette.background.primary }} />
+                                        </Grid>
+                                        <Grid item xs={9}>
+                                            <div style={{ margin: '0' }}>Bangalore, India</div>
+                                        </Grid>
+                                    </Grid>
+
+                                    {/* LinkedIn */}
+                                    <Grid container item xs={12}>
+                                        <Grid item xs={3}>
+                                            <LinkedInIcon sx={{ fontSize: '1.5rem', color: theme.palette.background.primary }} />
+                                        </Grid>
+                                        <Grid item xs={9}>
+                                            <a
+                                                href="https://www.linkedin.com/in/ramya-kasarabada-322734239/"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                style={{ textDecoration: 'none', color: theme.palette.background.primary }}
+                                            >
+                                                Connect with me!
+                                            </a>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
                             </Typography>
+
                         </Box>
                     </Grid>
                 </Grid>
