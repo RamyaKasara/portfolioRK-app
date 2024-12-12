@@ -1,6 +1,6 @@
 import { Box, Typography, Grid2 as Grid } from '@mui/material';
 import Navbar from '../../components/navbar.jsx';
-import PageBody from '../../components/pageBody.jsx';
+import Page from '../../components/page.jsx';
 import theme from '../../theme.js';
 import ghostyMicron from './assets/images/ghosty-books-micron.png';
 import PlaceIcon from '@mui/icons-material/Place';
@@ -10,7 +10,7 @@ function AboutMePage() {
     return ( 
         <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
             <Navbar />
-            <PageBody>  
+            <Page>  
                 <Grid container spacing={2}
                     sx={{
                         height: { md: '25rem', lg: '35rem' },
@@ -111,10 +111,10 @@ function AboutMePage() {
                         </Box>
                     </Grid>
                 </Grid>
-            </PageBody>
-            <PageBody background={theme.palette.text.primary}>
+            </Page>
+            <Page background={theme.palette.text.primary} height={'45rem'} >
                         <p>Here</p>
-            </PageBody>
+            </Page>
         </div>
      );
 }

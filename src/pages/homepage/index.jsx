@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import Navbar from '../../components/navbar.jsx';
-import PageBody from '../../components/pageBody.jsx';
+import Page from '../../components/page.jsx';
 import theme from '../../theme.js';
 import bulbMicron from './assets/images/bulb-micron-rk.png';
 
@@ -8,7 +8,7 @@ function HomePage() {
     return ( 
         <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
             <Navbar />
-            <PageBody>
+            <Page>
                 <div style={{ position: 'relative', textAlign: 'center' }}>
                     <Typography 
                     variant="h1" 
@@ -74,7 +74,7 @@ function HomePage() {
                         Blending creativity with problem solving and a passion for technology to craft beautiful and functional user interfaces. 
                     </Typography>
                 </Box>
-            </PageBody>
+            </Page>
         </div>
      );
 }
