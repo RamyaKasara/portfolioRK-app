@@ -41,7 +41,7 @@ function AboutMePage() {
                     <Grid item size={{ xs: 12, md: 6 }} sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                         <Box sx={{
                             margin: { md:'0 2rem', lg:'0 3rem'},
-                            width: { xs:'100%', sm: '50%', lg: '40%' },
+                            width: { xs:'65%', sm: '50%', lg: '40%' },
                             backgroundColor: theme.palette.background.tertiary,
                             borderRadius: '10px 10px 0 0s',
                             height: '100%',
@@ -60,7 +60,7 @@ function AboutMePage() {
                         </Box>
                         <Box sx={{
                             margin: { md:'0 2rem', lg:'0 3rem'},
-                            width: { xs:'100%' ,sm: '50%', lg: '40%' },
+                            width: { xs:'65%' ,sm: '50%', lg: '40%' },
                             backgroundColor: theme.palette.text.primary,
                             color: theme.palette.background.primary,
                             display: 'flex',
