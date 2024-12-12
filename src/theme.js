@@ -23,7 +23,10 @@ const theme = createTheme({
   typography: {
     fontFamily: '"Noto Sans SC", "Roboto", "Helvetica", "Arial", sans-serif',
     body1: {
-      fontSize:'1rem',
+      fontSize: '1rem',
+      '@media (min-width:1150px)': {
+        fontSize: '1.25rem', // Medium screen size
+      },
     },
     h3_1: {
       fontSize: '1.875rem',

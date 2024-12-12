@@ -4,14 +4,15 @@ import PageBody from '../../components/pageBody.jsx';
 import theme from '../../theme.js';
 import ghostyMicron from './assets/images/ghosty-books-micron.png';
 import PlaceIcon from '@mui/icons-material/Place';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 function AboutMePage() {
     return ( 
         <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
             <Navbar />
-            <PageBody>
-                <Grid container spacing={2} sx={{ height: '25rem', margin:{ xs:'2rem', md: '5rem'} }}>
-                    <Grid size={6} sx={{ height: '100%' }}>
+            <PageBody>  
+                <Grid container spacing={2} sx={{ height: { md: '25rem', lg:'35rem' }, margin:{ xs:'2rem', md: '5rem'} }}>
+                    <Grid size={6} sx={{ height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                         <Box sx={{
                             margin: { md:'2rem', lg:'2rem 3rem'},
                             display: 'flex', flexDirection: 'column',
@@ -33,38 +34,52 @@ function AboutMePage() {
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid size={6} sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <Grid size={6} sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                         <Box sx={{
                             margin: { md:'0 2rem', lg:'0 3rem'},
-                            width: { xs: '90%', md: '70%' },
+                            width: { xs: '50%', lg: '40%' },
                             backgroundColor: theme.palette.background.tertiary,
                             borderRadius: '10px 10px 0 0s',
                             height: '100%',
                             display: 'flex',
                             justifyContent: 'center',
                         }}>
-                            <img src={ghostyMicron} alt="ghosty-books-micron" style={{ height: '22rem', paddingTop:'5px' }}/>
+                            <Box
+                                component="img"
+                                src={ghostyMicron}
+                                alt="ghosty-books-micron"
+                                sx={{
+                                    paddingTop: '5px',
+                                    height: { xs: '20rem', md: '24rem', lg: '28rem' }, // Responsive height
+                                }}
+                            />
                         </Box>
                         <Box sx={{
                             margin: { md:'0 2rem', lg:'0 3rem'},
-                            width: { xs: '90%', md: '70%' },
+                            width: { xs: '50%', lg: '40%' },
                             backgroundColor: theme.palette.text.primary,
                             color: theme.palette.background.primary,
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            gap: '10px'
+                            gap: '10px',
+                            padding: '0.5rem',
                         }}>
                             <Typography variant="h3_1" component="p">
                                 Contact
                             </Typography>
-                            <Typography variant="body1" component="span">
-                                <Box sx={{ display: 'flex', gap: '0.5rem' }}>
+                            <Typography variant="body1" component="div">
+                                <Box sx={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', alignItems: 'center' }}>
                                     <PlaceIcon sx={{ fontSize: '1.5rem', color: theme.palette.background.primary }} />
-                                    <p>Bangalore, Karnataka, India</p>
+                                    <div style={{margin:'0'}}>Bangalore, India</div>
                                 </Box>
-                                {/* <a href="https://www.linkedin.com/in/ramya-kasarabada-322734239/" target="_blank" rel="noreferrer">Ramya Kasara</a> */}
+                                <Box sx={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', alignItems: 'center' }}>
+                                    <LinkedInIcon sx={{ fontSize: '1.5rem', color: theme.palette.background.primary }} />
+                                    <a href="https://www.linkedin.com/in/ramya-kasarabada-322734239/" target="_blank" rel="noreferrer"
+                                        style={{ textDecoration: 'none', color: theme.palette.background.primary }}
+                                    >Connect with me!</a>
+                                </Box>
                             </Typography>
                         </Box>
                     </Grid>
