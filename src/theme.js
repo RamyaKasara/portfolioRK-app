@@ -29,13 +29,21 @@ const theme = createTheme({
       },
     },
     h3_1: {
-      fontSize: '1.875rem',
+      fontSize: '2rem',
       fontFamily: '"Old Standard TT", serif',
-      fontWeight: '600',
+      fontWeight: '700',
       '@media (max-width:600px)': {
-        fontSize: '1.25rem', // Medium screen size
+        fontSize: '1.5rem', 
       },
     },
+    h2_1: {
+      fontSize: '1.5rem',
+      fontFamily: '"Old Standard TT", serif',
+      fontWeight: '500',
+      '@media (max-width:600px)': {
+        fontSize: '1.125rem', 
+      },
+    }
   },
 });
 

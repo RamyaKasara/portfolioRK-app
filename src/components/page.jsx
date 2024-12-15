@@ -9,7 +9,6 @@ const PageBox = styled(Box)(({ background, height, width }) => ({
 }));
 
 function Page({ children, background, height, width }) {
-    console.log("height", height);
     return ( 
         <PageBox background={background} height={height} width={width}>
             {children}
