@@ -25,16 +25,19 @@ const StyledStepLabel = styled(StepLabel)(({ theme }) => ({
 
 
 function Timeline({ steps }) {
+    console.log("steps", steps);
     const [activeStep, setActiveStep] = React.useState(0);
 
     const [expandedSteps, setExpandedSteps] = React.useState(
-        Array(steps.length).fill(false)
+        new Array(steps.length).fill(false)
     );
 
     const handleToggleExpand = (index) => {
-        setExpandedSteps((prevExpandedSteps) =>
-            prevExpandedSteps.map((isExpanded, i) => (i === index ? !isExpanded : isExpanded))
-        );
+        console.log("index", index);
+        const newExpandedSteps = [...expandedSteps];
+        newExpandedSteps[index] = !newExpandedSteps[index]; // Toggle the clicked step
+        setExpandedSteps(newExpandedSteps);
+        console.log(expandedSteps);
     };
 
     const handleReset = () => {
@@ -43,35 +46,24 @@ function Timeline({ steps }) {
 
     return ( 
         <Box sx={{ maxWidth: 400 }}>
-            <Stepper activeStep={activeStep} orientation="vertical">
+            <Stepper orientation="vertical">
                 {steps.map((step, index) => (
-                    <Step sx={{ color: theme.palette.background.primary }} key={step.label}>
+                    <Step sx={{ color: theme.palette.background.primary }} key={index}>
                         <StyledStepLabel
                             onClick={() => handleToggleExpand(index)} // Toggle collapse on click
-                            optional={
-                                index === steps.length - 1 ? (
-                                <Typography variant="caption">Last step</Typography>
-                                ) : null
-                            }
                         >
-                        {step.label}
+                            {step.label}
                         </StyledStepLabel>
                         {expandedSteps[index] && ( // Conditionally render StepContent
-                            <StepContent>
+                            <div style={{ paddingLeft: '32px', marginTop: '8px' }}>
                                 <Typography variant="body1">{step.description}</Typography>
-                            </StepContent>
-                        )}
+                            </div>
+                        )} 
                     </Step>
                 ))}
             </Stepper>
-            {activeStep === steps.length && (
-                <Paper square elevation={0} sx={{ p: 3 }}>
-                <Typography>All steps completed - you&apos;re finished</Typography>
-                <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                    Reset
-                </Button>
-                </Paper>
-            )}
+
+            
         </Box>
      );
 }

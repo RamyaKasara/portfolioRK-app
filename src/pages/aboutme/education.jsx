@@ -6,22 +6,16 @@ import theme from '../../theme.js';
 
 const steps = [
   {
-    label: 'Select campaign settings',
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
+    label: '2002 - 2015',
+    description: `Delhi Public School - Bangalore South : CBSE`,
   },
   {
-    label: 'Create an ad group',
-    description:
-      'An ad group contains one or more ads which target a shared set of keywords.',
+    label: '2015 - 2017',
+    description: 'Sri Chaitanya PU College : Pre-university',
   },
   {
-    label: 'Create an ad',
-    description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
+    label: '2017 - 2021',
+    description: `PES University : Bachelor of Technology - Electrical and Electronics Engineering`,
   },
 ];
 

@@ -63,7 +63,8 @@ function AboutMePage() {
                                 alt="ghosty-books-micron"
                                 sx={{
                                     paddingTop: '5px',
-                                    minHeight: { xs: '20rem', md: '26rem', lg: '28rem' }, // Responsive height
+                                    height: { xs: '20rem'},
+                                    minHeight: { md: '26rem', lg: '28rem' }, // Responsive height
                                 }}
                             />
                         </Box>
