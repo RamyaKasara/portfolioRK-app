@@ -37,32 +37,37 @@ const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
     },
 }))
 
-const TagButton = styled(Button)(({ theme }) => ({
-    borderRadius: '16px',
+export const TagButton = styled(Button)(({ theme, backgroundColor, color, hoverBackgroundColor, hoverColor }) => ({
+    borderRadius: '1rem',
     padding: '4px 12px',
-    border: `1px solid ${theme.palette.background.tertiary}`,
+    border: `1px solid ${backgroundColor || theme.palette.background.tertiary}`,
     textTransform: 'none',
     fontWeight: 'bold',
-    backgroundColor: theme.palette.background.tertiary,
-    color: theme.palette.background.primary,
+    backgroundColor: backgroundColor || theme.palette.background.tertiary,
+    fontSize: '1rem',
+    color: color || theme.palette.background.primary,
     '&:hover': {
-        backgroundColor: theme.palette.background.primary, // Change background on hover
-        borderColor: theme.palette.text.primary, // Change border color on hover
-        color: theme.palette.text.primary, // Change text color on hover
+        backgroundColor: hoverBackgroundColor || theme.palette.background.primary, // Change background on hover
+        borderColor: hoverBackgroundColor || theme.palette.background.primary, // Change border color on hover
+        color: hoverColor|| theme.palette.text.primary, // Change text color on hover
         transform: 'scale(1.05)', // Slightly enlarge the button for effect
         transition: 'all 0.3s ease', // Smooth transition for hover effects
     },
     //after clicking on the button
     '&:active': {
-        backgroundColor: theme.palette.background.primary, 
-        borderColor: theme.palette.text.primary, 
-        color: theme.palette.text.primary, 
+        backgroundColor: hoverColor || theme.palette.background.primary, 
+        borderColor: hoverColor || theme.palette.text.primary, 
+        color: hoverColor || theme.palette.text.primary, 
         transform: 'scale(1.05)', 
         transition: 'all 0.3s ease', 
     },
     '&:focus': {
         outline: 'none', // Remove the default outline
     },
+    '@media (min-width:1150px)': {
+        fontSize: '1.125rem', // Medium screen size
+        borderRadius: '1.125rem',
+      },
 }));
 
 const RegularButton = styled(Button)(({ theme }) => ({
