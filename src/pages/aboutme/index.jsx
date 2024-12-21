@@ -8,6 +8,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import Navbar from '../../components/navbar.jsx';
 import Page from '../../components/page.jsx';
 import Education from './education.jsx';
+import TechnicalSkills from './technicalSkills.jsx';
 
 // 3. Theme Imports
 import theme from '../../theme.js';
@@ -133,15 +134,41 @@ function AboutMePage() {
                 </Grid>
             </Page>
             <Page background={theme.palette.background.tertiary}>
-                <Box
-                    sx={{
-                        width: { md: '50%', lg: '40%' },
-                        height: { md: '25rem', lg: '34rem' },
-                        margin: { xs: '2rem', md: '5rem' },
-                    }}
-                >
-                    <Education />
-                </Box>
+                <Grid container spacing={2} sx={{ margin: { xs: '2rem' } }}>
+                    <Grid item size={{ xs: 12, md: 6 }}
+                        sx={{
+                            height: { md: '25rem', lg: '34rem' },
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'center'
+                        }}
+                    
+                    >
+                        <Box sx={{
+                            margin: { md:'2rem', lg:'2rem 3rem'},
+                            width: { xs: '90%', md: '70%' },
+                        }}>
+                            <Education />
+                        </Box>
+                    </Grid>
+                    <Grid item size={{ xs: 12, md: 6 }}
+                        sx={{
+                            height: { md: '25rem', lg: '34rem' },
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'center'
+                        }}
+                    
+                    >
+                        <Box sx={{
+                            mt: {xs: '2rem !important', md: '4rem !important', lg: '11rem !important'},
+                            margin: { md: '2rem', lg: '2rem 3rem' },
+                            width: { xs: '90%', md: '70%' },
+                        }}>
+                            <TechnicalSkills />
+                        </Box>
+                    </Grid>
+                </Grid>
             </Page>
         </div>
      );
