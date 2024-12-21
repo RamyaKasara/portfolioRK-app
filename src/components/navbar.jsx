@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import {AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography, useMediaQuery } from "@mui/material";
 // 3. MUI Utility Imports
 import { useTheme, styled } from "@mui/material/styles";
+// 4. Asset Imports
+import fishMicron from '../assets/images/fish-micron.png';
 
 
 
@@ -98,6 +100,7 @@ function Navbar() {
         <>
             <NavigationAppBar position="sticky" style={{flexShrink: 0}}>
                 <Toolbar>
+                    <Box sx={{ height: '100px', mr: '1rem' }} component="img" src={fishMicron} alt="fish-micron" />
                     <Typography
                         variant="h3_1"
                         component="div"
