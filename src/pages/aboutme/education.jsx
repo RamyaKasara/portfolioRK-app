@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { styled, Typography, Box, Stepper, Step, StepLabel, StepContent, Button, Paper } from '@mui/material';
+import FlareIcon from '@mui/icons-material/Flare';
+import WorkIcon from '@mui/icons-material/Work';
+import SchoolIcon from '@mui/icons-material/School';
 import Page from '../../components/page.jsx';
 import Timeline from '../../components/timeline.jsx';
 import theme from '../../theme.js';
@@ -26,7 +29,7 @@ function Education() {
             <Typography variant="h3_1" component="p" sx={{color: theme.palette.background.primary}}>
                 Education
             </Typography>
-            <Timeline steps={steps} />
+            <Timeline steps={steps} stepIcon={SchoolIcon} />
         </Page>
      );
 }
