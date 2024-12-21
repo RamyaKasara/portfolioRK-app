@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { styled, Typography, Box, Stepper, Step, StepLabel, StepConnector, Paper } from '@mui/material';
+import FlareIcon from '@mui/icons-material/Flare';
+import WorkIcon from '@mui/icons-material/Work';
 import theme from '../theme.js';
 
 const StyledStepLabel = styled(StepLabel)(({ theme }) => ({
@@ -16,9 +18,11 @@ const StyledStepLabel = styled(StepLabel)(({ theme }) => ({
     '& .MuiStepLabel-label.Mui-active' :{
         fontWeight: '700',
     },
+    '& .MuiStepLabel-iconContainer': {
+        cursor: 'pointer',
+    },
     '& .MuiStepIcon-root': {
         color: theme.palette.text.primary,
-        cursor: 'pointer',
     },
     '& .MuiStepIcon-root.Mui-active' :{
         color: theme.palette.text.primary,
@@ -64,7 +68,7 @@ function Timeline({ steps }) {
             <Stepper orientation="vertical" connector={<CustomStepConnector />}>
                 {steps.map((step, index) => (
                     <Step sx={{ color: theme.palette.background.primary }} key={index}>
-                        <StyledStepLabel
+                        <StyledStepLabel StepIconComponent={WorkIcon}
                             onClick={() => handleToggleExpand(index)} // Toggle collapse on click
                         >
                             {step.label}
