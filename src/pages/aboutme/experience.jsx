@@ -8,20 +8,22 @@ import Timeline from '../../components/timeline.jsx';
 import theme from '../../theme.js';
 
 const steps = [
-  {
-    label: '2002 - 2015',
-    description: `Delhi Public School - Bangalore South : CBSE`,
-  },
-  {
-    label: '2015 - 2017',
-    description: 'Sri Chaitanya PU College : Pre-university',
-  },
-  {
-    label: '2017 - 2021',
-    description: `PES University : Bachelor of Technology - Majored in Electrical and Electronics Engineering, 
-    Specialization in Embedded Systems, 
-    Minored in Computer Science Engineering`,
-  },
+    {
+        label: '2023 - Present',
+        description: `Software Development Engineer at Arka Energy :
+        Frontend feature development, existing feature enhancements, and bug fixing`,
+    },
+    {
+        label: '2023',
+        description: `Software Development Intern at Arka Energy :
+        Frontend feature development and bug fixing`,
+    },
+    {
+        label: '2021 - 2022',
+        description: `Technology Consultant at PwC India :
+        Microsoft D365 F&O ERP developer`,
+    },
+  
 ];
 
 function Experience() {
