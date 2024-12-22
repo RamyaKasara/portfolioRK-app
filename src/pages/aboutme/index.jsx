@@ -33,7 +33,7 @@ function AboutMePage() {
                             margin: { md:'2rem', lg:'2rem 3rem'},
                             display: 'flex', flexDirection: 'column',
                             gap: '2rem',
-                            width: { xs: '90%', md: '70%' },
+                            width: { xs: '90%', md: '100%' },
                             textAlign: 'justify',
                         }}>
                             <Typography variant="h1" component="h1"
@@ -146,8 +146,8 @@ function AboutMePage() {
                     
                     >
                         <Box sx={{
-                            margin: { md:'2rem', lg:'2rem 2rem'},
-                            width: { xs: '90%', md: '70%' },
+                            margin: { md:'2rem', lg:'2rem 3rem'},
+                            width: { xs: '90%', md: '100%' },
                         }}>
                             <Education />
                         </Box>
@@ -163,7 +163,7 @@ function AboutMePage() {
                     >
                         <Box sx={{
                             mt: {xs: '2rem !important', md: '10rem !important', lg: '11rem !important'},
-                            margin: { md: '2rem', lg: '2rem 2rem' },
+                            margin: { md: '2rem', lg: '2rem 3rem' },
                             width: { xs: '90%', md: '70%' },
                         }}>
                             <TechnicalSkills />
@@ -172,10 +172,10 @@ function AboutMePage() {
                 </Grid>
             </Page>
             <Box sx={{
-                width: { xs: '90%', md: '45%' },
+                width: { xs: '90%', md: '40%' },
                 position: 'relative',
                 top: { xs: '-2rem', md: '-3rem' },
-                right: { xs: '-2rem', md: '-5rem' },
+                right: { xs: '-2rem', md: '-3rem' },
                 zIndex: 2,
             }}>
                 <Experience />

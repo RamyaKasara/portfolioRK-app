@@ -62,7 +62,7 @@ function Timeline({ steps, stepIcon, connectorColor }) {
     };
 
     return ( 
-        <Box sx={{ maxWidth: 400 }}>
+        <Box sx={{ width:'100%' }}>
             <Stepper orientation="vertical" connector={<CustomStepConnector connectorColor={connectorColor} />}>
                 {steps.map((step, index) => (
                     <Step sx={{ color: theme.palette.background.primary }} key={index}>

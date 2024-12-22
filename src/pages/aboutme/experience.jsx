@@ -28,10 +28,12 @@ function Experience() {
 
     return ( 
         <Page background={theme.palette.text.primary}>
-            <Typography variant="h3_1" component="p" sx={{color: theme.palette.background.primary}}>
-                Experience
-            </Typography>
-            <Timeline steps={steps} stepIcon={WorkIcon} connectorColor={theme.palette.background.primary} />
+            <Box sx={{padding: '2rem'}}>
+                <Typography variant="h3_1" component="p" sx={{color: theme.palette.background.primary}}>
+                    Experience
+                </Typography>
+                <Timeline steps={steps} stepIcon={WorkIcon} connectorColor={theme.palette.background.primary} />
+            </Box>
         </Page>
      );
 }
