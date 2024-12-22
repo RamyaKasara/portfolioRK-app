@@ -24,7 +24,6 @@ const topics = [
     'AI Tools',
     'DataBases',
     'Programming',
-    'Automation Testing',
 ];
 
 const technologies = [
