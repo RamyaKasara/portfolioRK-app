@@ -21,11 +21,14 @@ const steps = [
     {
         label: '2021 - 2022',
         description: `Technology Consultant at PwC India :
-        Microsoft D365 F&O ERP developer`,
+        Microsoft D365 F&O ERP development and customization`,
     },
   
 ];
 
+const softSkills = [
+    ''
+];
 function Experience() {
 
     return ( 
