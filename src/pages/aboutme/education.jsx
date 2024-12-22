@@ -18,7 +18,9 @@ const steps = [
   },
   {
     label: '2017 - 2021',
-    description: `PES University : Bachelor of Technology - Electrical and Electronics Engineering`,
+    description: `PES University : Bachelor of Technology - Majored in Electrical and Electronics Engineering, 
+    Specialization in Embedded Systems, 
+    Minored in Computer Science Engineering`,
   },
 ];
 

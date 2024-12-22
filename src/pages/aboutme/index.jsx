@@ -137,7 +137,7 @@ function AboutMePage() {
                 <Grid container spacing={2} sx={{ margin: { xs: '2rem' } }}>
                     <Grid item size={{ xs: 12, md: 6 }}
                         sx={{
-                            height: { md: '25rem', lg: '34rem' },
+                            height: { md: '40rem' },
                             display: 'flex',
                             flexDirection: 'row',
                             justifyContent: 'center'
@@ -145,7 +145,7 @@ function AboutMePage() {
                     
                     >
                         <Box sx={{
-                            margin: { md:'2rem', lg:'2rem 3rem'},
+                            margin: { md:'2rem', lg:'2rem 2rem'},
                             width: { xs: '90%', md: '70%' },
                         }}>
                             <Education />
@@ -161,8 +161,8 @@ function AboutMePage() {
                     
                     >
                         <Box sx={{
-                            mt: {xs: '2rem !important', md: '4rem !important', lg: '11rem !important'},
-                            margin: { md: '2rem', lg: '2rem 3rem' },
+                            mt: {xs: '2rem !important', md: '10rem !important', lg: '11rem !important'},
+                            margin: { md: '2rem', lg: '2rem 2rem' },
                             width: { xs: '90%', md: '70%' },
                         }}>
                             <TechnicalSkills />
