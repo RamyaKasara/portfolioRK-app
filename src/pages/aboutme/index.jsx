@@ -15,6 +15,7 @@ import theme from '../../theme.js';
 
 // 4. Asset Imports
 import ghostyMicron from './assets/images/ghosty-books-micron.png';
+import Experience from './experience.jsx';
 
 
 function AboutMePage() {
@@ -170,6 +171,15 @@ function AboutMePage() {
                     </Grid>
                 </Grid>
             </Page>
+            <Box sx={{
+                width: { xs: '90%', md: '45%' },
+                position: 'relative',
+                top: { xs: '-2rem', md: '-3rem' },
+                right: { xs: '-2rem', md: '-5rem' },
+                zIndex: 2,
+            }}>
+                <Experience />
+            </Box>
         </div>
      );
 }

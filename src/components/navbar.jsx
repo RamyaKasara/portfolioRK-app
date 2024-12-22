@@ -37,7 +37,13 @@ const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
     },
 }))
 
-export const TagButton = styled(Button)(({ theme, backgroundColor, color, hoverBackgroundColor, hoverColor }) => ({
+export const TagButton = styled(Button, {
+    shouldForwardProp: (prop) =>
+        prop !== 'backgroundColor' &&
+        prop !== 'color' &&
+        prop !== 'hoverBackgroundColor' &&
+        prop !== 'hoverColor', // Prevent custom props from being passed to DOM
+})(({ theme, backgroundColor, color, hoverBackgroundColor, hoverColor }) => ({
     borderRadius: '1rem',
     padding: '4px 12px',
     border: `1px solid ${backgroundColor || theme.palette.background.tertiary}`,

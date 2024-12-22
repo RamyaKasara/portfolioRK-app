@@ -31,24 +31,24 @@ const StyledStepLabel = styled(StepLabel)(({ theme }) => ({
 
 }));
 
-const StyledContentDiv = styled('div')(({ theme }) => ({
+const StyledContentDiv = styled('div')(({ theme, connectorColor }) => ({
     marginLeft: '12px',
     paddingLeft: '20px',
     paddingRight: '8px',
-    borderLeft: `1px solid ${theme.palette.text.primary}`,
+    borderLeft: `1px solid ${connectorColor || theme.palette.text.primary}`,
 }));
 
-const CustomStepConnector = styled(StepConnector)(({ theme }) => ({
+const CustomStepConnector = styled(StepConnector)(({ theme, connectorColor }) => ({
     '& .MuiStepConnector-line': {
-        borderLeft: `1px solid ${theme.palette.text.primary}`,
+        borderLeft: `1px solid ${connectorColor ||theme.palette.text.primary}`,
     },
 }));
 
-function Timeline({ steps, stepIcon }) {
+function Timeline({ steps, stepIcon, connectorColor }) {
     const [activeStep, setActiveStep] = React.useState(0);
 
     const [expandedSteps, setExpandedSteps] = React.useState(
-        new Array(steps.length).fill(false)
+        new Array(steps.length).fill(true)
     );
 
     const handleToggleExpand = (index) => {
@@ -63,15 +63,15 @@ function Timeline({ steps, stepIcon }) {
 
     return ( 
         <Box sx={{ maxWidth: 400 }}>
-            <Stepper orientation="vertical" connector={<CustomStepConnector />}>
+            <Stepper orientation="vertical" connector={<CustomStepConnector connectorColor={connectorColor} />}>
                 {steps.map((step, index) => (
                     <Step sx={{ color: theme.palette.background.primary }} key={index}>
-                        <StyledStepLabel StepIconComponent={stepIcon}
+                        <StyledStepLabel StepIconComponent={stepIcon} 
                             onClick={() => handleToggleExpand(index)} // Toggle collapse on click
                         >
                             {step.label}
                         </StyledStepLabel>
-                        <StyledContentDiv>
+                        <StyledContentDiv connectorColor={connectorColor}>
                             {expandedSteps[index] && ( // Conditionally render StepContent
                                 <div style={{ paddingLeft: '2rem', marginTop: '0.5rem' }}>
                                     <Typography variant="body1">{step.description}</Typography>

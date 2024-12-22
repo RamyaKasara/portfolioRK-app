@@ -24,16 +24,16 @@ const steps = [
   },
 ];
 
-function Education() {
+function Experience() {
 
     return ( 
-        <Page background={theme.palette.background.tertiary}>
+        <Page background={theme.palette.text.primary}>
             <Typography variant="h3_1" component="p" sx={{color: theme.palette.background.primary}}>
-                Education
+                Experience
             </Typography>
-            <Timeline steps={steps} stepIcon={SchoolIcon} connectorColor={theme.palette.background.primary} />
+            <Timeline steps={steps} stepIcon={WorkIcon} connectorColor={theme.palette.background.primary} />
         </Page>
      );
 }
 
-export default Education;
+export default Experience;
