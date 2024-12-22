@@ -134,7 +134,7 @@ function AboutMePage() {
                     </Grid>
                 </Grid>
             </Page>
-            <Page background={theme.palette.background.tertiary}>
+            <Page height={{ xs: '48rem', md: '40rem'}} background={theme.palette.background.tertiary}>
                 <Grid container spacing={2} sx={{ margin: { xs: '2rem' } }}>
                     <Grid item size={{ xs: 12, md: 6 }}
                         sx={{
@@ -170,16 +170,19 @@ function AboutMePage() {
                         </Box>
                     </Grid>
                 </Grid>
+                <Box sx={{
+                    width: { xs: '90%', md: '40%' },
+                    position: 'relative',
+                    top: { sm: '2rem', md: '-10rem' },
+                    right: { xs: '-2rem', md: '-3rem' },
+                    zIndex: 2,
+                }}>
+                    <Experience />
+                </Box>
             </Page>
-            <Box sx={{
-                width: { xs: '90%', md: '40%' },
-                position: 'relative',
-                top: { xs: '-2rem', md: '-3rem' },
-                right: { xs: '-2rem', md: '-3rem' },
-                zIndex: 2,
-            }}>
-                <Experience />
-            </Box>
+            <Page background={theme.palette.background.primary}>
+                <Box sx={{height:'40rem'}}></Box>
+            </Page>
         </div>
      );
 }
