@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { styled, Typography, Box, Stepper, Step, StepLabel, StepContent, Button, Paper } from '@mui/material';
-import FlareIcon from '@mui/icons-material/Flare';
 import WorkIcon from '@mui/icons-material/Work';
-import SchoolIcon from '@mui/icons-material/School';
 import Page from '../../components/page.jsx';
 import Timeline from '../../components/timeline.jsx';
+import { TagButton } from '../../components/navbar.jsx';
 import theme from '../../theme.js';
 
 const steps = [
@@ -27,7 +26,11 @@ const steps = [
 ];
 
 const softSkills = [
-    ''
+    'Problem Solving',
+    'Creativity',
+    'Accountability',
+    'Teamwork',
+    'Communication',
 ];
 function Experience() {
 
@@ -38,7 +41,13 @@ function Experience() {
                     Experience
                 </Typography>
                 <Timeline steps={steps} stepIcon={WorkIcon} connectorColor={theme.palette.background.primary} />
+                <Box sx={{display: 'flex', flexFlow: 'row wrap', gap: '1rem', mt: '1rem'}} >
+                    {softSkills.map((skill) => (
+                        <TagButton key={skill} sx={{fontWeight: '400'}} color={theme.palette.text.primary} backgroundColor={theme.palette.background.primary}>{skill}</TagButton>
+                    ))}
+                </Box>
             </Box>
+
         </Page>
      );
 }

@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { styled, Typography, Box, Stepper, Step, StepLabel, StepContent, Button, Paper } from '@mui/material';
-import FlareIcon from '@mui/icons-material/Flare';
-import WorkIcon from '@mui/icons-material/Work';
 import SchoolIcon from '@mui/icons-material/School';
 import Page from '../../components/page.jsx';
 import Timeline from '../../components/timeline.jsx';
