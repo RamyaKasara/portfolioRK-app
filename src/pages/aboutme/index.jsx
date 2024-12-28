@@ -26,7 +26,7 @@ function AboutMePage() {
             <Page>  
                 <Grid container spacing={2}
                     sx={{
-                        height: { md: '25rem', lg: '28rem' },
+                        height: { md: '27rem', lg: '28rem' },
                         margin: { xs: '2rem' },
                     }}>
                     <Grid item size={{ xs:12, md:6 }} sx={{ height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
@@ -135,7 +135,7 @@ function AboutMePage() {
                     </Grid>
                 </Grid>
             </Page>
-            <Page height={{ xs: '50rem', md: '42rem' }} background={theme.palette.background.tertiary}>
+            <Page height={{ xs: '65rem', sm:'48rem', md: '42rem' }} background={theme.palette.background.tertiary}>
                 {/* xs:'64rem */}
                 <Grid container spacing={2} sx={{ margin: { xs: '2rem' } }}>
                     <Grid item size={{ xs: 12, md: 6 }}
@@ -173,9 +173,9 @@ function AboutMePage() {
                     </Grid>
                 </Grid>
                 <Box sx={{
-                    width: { xs: '90%', md: '40%' },
+                    width: { xs: '85%', md: '40%' },
                     position: 'relative',
-                    top: { sm: '4rem', md: '-9rem' },
+                    top: { xs:'2rem', md: '-9rem' },
                     right: { xs: '-2rem', md: '-3rem' },
                     zIndex: 2,
                 }}>
@@ -183,7 +183,7 @@ function AboutMePage() {
                 </Box>
             </Page>
             <Page background={theme.palette.background.primary}>
-                <Box sx={{ height: { xs: '80rem', md:'40rem' }, display: 'flex', flexDirection: 'row', justifyContent: { xs:'start', md:'end'} }}>
+                <Box sx={{ height: { xs: '90rem', sm:'70rem', md:'55rem' }, display: 'flex', flexDirection: 'row', justifyContent: { xs:'start', md:'end'} }}>
                     <HobbiesAndLanguage />
                 </Box>
             </Page>

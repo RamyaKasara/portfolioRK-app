@@ -28,8 +28,8 @@ function  HobbiesAndLanguage() {
     return ( 
         <Box sx={{
             padding: { xs: '1rem 3rem', md: '2rem 9rem' },
-            width: { xs: '100%', md: '50%' },
-            mt: { xs: '40rem', md: '0rem' },
+            width: { xs: '100%', md: '60%' },
+            mt: { xs: '52rem', sm:'38rem', md: '0rem' },
             display: 'flex',
             flexDirection: 'column',
             gap: '3rem',
@@ -38,7 +38,7 @@ function  HobbiesAndLanguage() {
                 <Typography variant="h3_1" component="p" sx={{color: theme.palette.text.primary}}>
                     Language
                 </Typography>
-                <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', gap: { xs: '2.5rem', md: '3rem' }, mt: '1rem'}} >
+                <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', gap: { xs: '2.5rem', md:'1.5rem', lg: '3rem' }, mt: '1rem'}} >
                     {languages.map((language) => (
                         <Box>
                             <Typography variant="" component="p" sx={{
@@ -60,7 +60,7 @@ function  HobbiesAndLanguage() {
                 <Typography variant="h3_1" component="p" sx={{color: theme.palette.text.primary}}>
                     Hobbies
                 </Typography>
-                <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', gap: { xs: '2.5rem', md: '3rem' }, mt: '1rem'}} >
+                <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', gap: { xs: '2.5rem', md:'1.5rem', lg: '3rem' }, mt: '1rem'}} >
                     {hobbies.map((hobby) => (
                         <Box key={hobby.hobby}>
                             <Box sx={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center'}}>

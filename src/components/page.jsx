@@ -10,6 +10,9 @@ const PageBox = styled(Box)(({ background, height, width }) => ({
         [theme.breakpoints.up('xs')]: {
             minHeight: height.xs, // Small screens
         },
+        [theme.breakpoints.up('sm')]: {
+            minHeight: height.sm, // Small screens
+        },
         [theme.breakpoints.up('md')]: {
             minHeight: height.md, // Medium and larger screens
         },
