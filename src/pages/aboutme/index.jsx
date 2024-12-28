@@ -135,7 +135,8 @@ function AboutMePage() {
                     </Grid>
                 </Grid>
             </Page>
-            <Page height={{ xs: '50rem', md: '42rem'}} background={theme.palette.background.tertiary}>
+            <Page height={{ xs: '50rem', md: '42rem' }} background={theme.palette.background.tertiary}>
+                {/* xs:'64rem */}
                 <Grid container spacing={2} sx={{ margin: { xs: '2rem' } }}>
                     <Grid item size={{ xs: 12, md: 6 }}
                         sx={{
