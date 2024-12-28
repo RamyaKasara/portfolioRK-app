@@ -6,8 +6,10 @@ import PlaceIcon from '@mui/icons-material/Place';
 
 // 2. Component Imports
 import Navbar from '../../components/navbar.jsx';
-import Page from '../../components/page.jsx';
 import Education from './education.jsx';
+import Experience from './experience.jsx';
+import HobbiesAndLanguage from './hobbiesAndLanguage.jsx';
+import Page from '../../components/page.jsx';
 import TechnicalSkills from './technicalSkills.jsx';
 
 // 3. Theme Imports
@@ -15,7 +17,6 @@ import theme from '../../theme.js';
 
 // 4. Asset Imports
 import ghostyMicron from './assets/images/ghosty-books-micron.png';
-import Experience from './experience.jsx';
 
 
 function AboutMePage() {
@@ -134,7 +135,7 @@ function AboutMePage() {
                     </Grid>
                 </Grid>
             </Page>
-            <Page height={{ xs: '50rem', md: '40rem'}} background={theme.palette.background.tertiary}>
+            <Page height={{ xs: '50rem', md: '42rem'}} background={theme.palette.background.tertiary}>
                 <Grid container spacing={2} sx={{ margin: { xs: '2rem' } }}>
                     <Grid item size={{ xs: 12, md: 6 }}
                         sx={{
@@ -181,7 +182,9 @@ function AboutMePage() {
                 </Box>
             </Page>
             <Page background={theme.palette.background.primary}>
-                <Box sx={{height:'40rem'}}></Box>
+                <Box sx={{ height: { xs: '80rem', md:'40rem' }, display: 'flex', flexDirection: 'row', justifyContent: { xs:'start', md:'end'} }}>
+                    <HobbiesAndLanguage />
+                </Box>
             </Page>
         </div>
      );
