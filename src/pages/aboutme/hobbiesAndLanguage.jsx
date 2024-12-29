@@ -29,7 +29,16 @@ function  HobbiesAndLanguage() {
         <Box sx={{
             padding: { xs: '1rem 3rem', md: '2rem 9rem' },
             width: { xs: '100%', md: '60%' },
-            mt: { xs: '52rem', sm:'38rem', md: '0rem' },
+            marginTop: { xs: '57rem', sm: '38rem', md: '0rem' },
+            [theme.breakpoints.between(400, 440)]: {
+                mt: '50rem', // Custom margin-top for screens between 400px and 540px
+            },
+            [theme.breakpoints.between(440, 500)]: {
+                mt: '40rem', // Custom margin-top for screens between 400px and 540px
+            },
+            [theme.breakpoints.between(500, 600)]: {
+                mt: '28rem', // Custom margin-top for screens between 400px and 540px
+            },
             display: 'flex',
             flexDirection: 'column',
             gap: '3rem',

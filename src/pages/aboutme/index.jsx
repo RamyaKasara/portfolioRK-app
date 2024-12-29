@@ -175,7 +175,7 @@ function AboutMePage() {
                 <Box sx={{
                     width: { xs: '85%', md: '40%' },
                     position: 'relative',
-                    top: { xs:'2rem', md: '-9rem' },
+                    top: { xs: '2rem', md: '-9rem' },
                     right: { xs: '-2rem', md: '-3rem' },
                     zIndex: 2,
                 }}>
