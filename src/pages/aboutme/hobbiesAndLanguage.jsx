@@ -5,6 +5,7 @@ import BakeIcon from './assets/images/whisk.svg';
 import PaintIcon from './assets/images/paint.svg';
 import MicronIcon from './assets/images/micron.svg';
 import ReadIcon from './assets/images/read.svg';
+import PhotoIcon from './assets/images/photography.svg';
 
 const languages = [
     { language: 'English', level: 'Fluent' },
@@ -17,6 +18,7 @@ const hobbies = [
     { hobby: 'Micron Art', icon: MicronIcon },
     { hobby: 'Painting', icon: PaintIcon  },
     { hobby: 'Baking', icon: BakeIcon },
+    { hobby: 'Photography', icon: PhotoIcon },
 ];
 
 const getIconSize = (icon) => {
@@ -69,7 +71,7 @@ function  HobbiesAndLanguage() {
                 <Typography variant="h3_1" component="p" sx={{color: theme.palette.text.primary}}>
                     Hobbies
                 </Typography>
-                <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', gap: { xs: '2.5rem', md:'1.5rem', lg: '3rem' }, mt: '1rem'}} >
+                <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', gap: { xs: '2.5rem', md:'1.5rem', lg: '1.8rem' }, mt: '1rem' }} >
                     {hobbies.map((hobby) => (
                         <Box key={hobby.hobby}>
                             <Box sx={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center'}}>
