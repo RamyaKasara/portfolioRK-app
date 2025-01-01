@@ -8,7 +8,7 @@ function HomePage() {
     return ( 
         <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
             <Navbar />
-            <Page>
+            <Page height={'100vh'}>
                 <div style={{ position: 'relative', textAlign: 'center' }}>
                     <Typography 
                     variant="h1" 
