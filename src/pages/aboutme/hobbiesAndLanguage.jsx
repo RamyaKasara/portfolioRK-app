@@ -95,7 +95,7 @@ function  HobbiesAndLanguage() {
                         </Box>
                     ))}
                 </Box> */}
-                <Grid container spacing={{xs: 4}}>
+                <Grid container spacing={{xs: 4}} sx={{ mt: '1rem' }}>
                     {hobbies.map((hobby) => (
                         <Grid item xs={6} sm={4} md={3} key={hobby.hobby}>
                             <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', width: '110px' }}>
