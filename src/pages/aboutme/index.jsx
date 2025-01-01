@@ -231,5 +231,5 @@ export default AboutMePage;
 // Medium (md): 900px - 1200px (e.g., tablets and smaller laptops)
 // Large (lg): Above 1200px (e.g., desktops)
 
-//iphone se done
-//handle 390 to 450
+//second page height from width 444px to 600px: height needs to be reduced
+//second page height from width 600px to 612px: height needs to be increased a bit
