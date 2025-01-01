@@ -25,22 +25,39 @@ const getIconSize = (icon) => {
     return '70px';
 };
 
+const getMarginTop = (width) =>{
+    if(width < 400) return '57rem';
+    if(width >= 400 && width < 425) return '53rem';
+    if(width >= 425 && width < 443) return '50rem';
+    if(width >= 443 && width < 460) return '46rem';
+    if(width >= 460 && width < 483) return '42rem';
+    if(width >= 483 && width < 500) return '40rem';
+    if(width >= 500 && width < 540) return '38rem';
+    if(width >= 540 && width < 600) return '30rem';
+    if(width >= 600 && width < 700) return '46rem';
+    if(width >= 700 && width < 773) return '42rem';
+    if(width >= 773 && width < 859) return '40rem';
+    if(width >= 859 && width < 900) return '38rem';
+    if(width >= 900 && width < 1200) return '2rem';
+    if(width >= 1200) return '2rem';
+}
+
 function  HobbiesAndLanguage() {
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
+    React.useEffect(() => {
+      const handleResize = () => setWindowWidth(window.innerWidth);
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
 
     return ( 
         <Box sx={{
-            padding: { xs: '1rem 3rem', md: '2rem 5rem 2rem 9rem' },
+            padding: { xs: '1rem 3rem', md: '2rem 3rem 2rem 9rem' },
             width: { xs: '100%', md: '60%' },
-            marginTop: { xs: '57rem', sm: '38rem', md: '0rem' },
-            [theme.breakpoints.between(400, 440)]: {
-                mt: '50rem', // Custom margin-top for screens between 400px and 540px
-            },
-            [theme.breakpoints.between(440, 500)]: {
-                mt: '40rem', // Custom margin-top for screens between 400px and 540px
-            },
-            [theme.breakpoints.between(500, 600)]: {
-                mt: '28rem', // Custom margin-top for screens between 400px and 540px
-            },
+            marginTop: getMarginTop(windowWidth),
             display: 'flex',
             flexDirection: 'column',
             gap: '3rem',

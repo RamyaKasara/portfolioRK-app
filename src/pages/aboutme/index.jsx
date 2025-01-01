@@ -184,7 +184,18 @@ function AboutMePage() {
                 </Box>
             </Page>
             <Page background={theme.palette.background.primary}>
-                <Box sx={{ height: { xs: '110rem', sm:'70rem', md:'55rem' }, display: 'flex', flexDirection: 'row', justifyContent: { xs:'start', md:'end'} }}>
+                <Box sx={{ 
+                    height: { xs: '110rem', sm:'75rem', md:'48rem' ,lg:'48rem' }, 
+                    [theme.breakpoints.between(774, 900)]: {
+                        height: '65rem',
+                    },
+                    [theme.breakpoints.between(900, 977)]: {
+                        height: '57rem',
+                    },
+                    display: 'flex', 
+                    flexDirection: 'row', 
+                    justifyContent: { xs:'start', md:'end'} 
+                }}>
                     <HobbiesAndLanguage />
                 </Box>
             </Page>
@@ -194,3 +205,12 @@ function AboutMePage() {
 }
 
 export default AboutMePage;
+
+// handle responsiveness for :
+// Below 600px (e.g., small phones like iPhone SE)
+// Small (sm): 600px - 900px (e.g., larger phones or small tablets)
+// Medium (md): 900px - 1200px (e.g., tablets and smaller laptops)
+// Large (lg): Above 1200px (e.g., desktops)
+
+//iphone se done
+//handle 390 to 450
