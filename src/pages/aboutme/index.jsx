@@ -8,6 +8,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import Navbar from '../../components/navbar.jsx';
 import Education from './education.jsx';
 import Experience from './experience.jsx';
+import Footer from '../../components/footer.jsx';
 import HobbiesAndLanguage from './hobbiesAndLanguage.jsx';
 import Page from '../../components/page.jsx';
 import TechnicalSkills from './technicalSkills.jsx';
@@ -187,6 +188,7 @@ function AboutMePage() {
                     <HobbiesAndLanguage />
                 </Box>
             </Page>
+            <Footer />
         </div>
      );
 }
