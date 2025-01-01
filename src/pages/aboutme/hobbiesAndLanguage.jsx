@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, Typography, Box, Stepper, Step, StepLabel, StepContent, Button, Paper } from '@mui/material';
+import { styled, Typography, Box, Grid2 as Grid } from '@mui/material';
 import theme from '../../theme.js';
 import BakeIcon from './assets/images/whisk.svg';
 import PaintIcon from './assets/images/paint.svg';
@@ -29,7 +29,7 @@ function  HobbiesAndLanguage() {
 
     return ( 
         <Box sx={{
-            padding: { xs: '1rem 3rem', md: '2rem 9rem' },
+            padding: { xs: '1rem 3rem', md: '2rem 5rem 2rem 9rem' },
             width: { xs: '100%', md: '60%' },
             marginTop: { xs: '57rem', sm: '38rem', md: '0rem' },
             [theme.breakpoints.between(400, 440)]: {
@@ -49,29 +49,31 @@ function  HobbiesAndLanguage() {
                 <Typography variant="h3_1" component="p" sx={{color: theme.palette.text.primary}}>
                     Language
                 </Typography>
-                <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', gap: { xs: '2.5rem', md:'1.5rem', lg: '3rem' }, mt: '1rem'}} >
+                <Grid container spacing={6} sx={{ mt: '1rem' }}>
                     {languages.map((language) => (
-                        <Box>
-                            <Typography variant="" component="p" sx={{
-                                color: theme.palette.text.primary,
-                                fontWeight: '700',
-                                fontSize: { xs: '1.125rem', md: '1.5rem' },
-                                fontFamily: '"Old Standard TT", serif', 
-                            }}>
-                                {language.language}
-                            </Typography>
-                            <Typography variant="body1" component="p" sx={{color: theme.palette.text.primary}}>
-                                {language.level}
-                            </Typography>
-                        </Box>
+                        <Grid item xs={6} sm={4} md={3} key={language.language}>
+                            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
+                                <Typography variant="" component="p" sx={{
+                                    color: theme.palette.text.primary,
+                                    fontWeight: '700',
+                                    fontSize: { xs: '1.125rem', md: '1.5rem' },
+                                    fontFamily: '"Old Standard TT", serif',
+                                }}>
+                                    {language.language}
+                                </Typography>
+                                <Typography variant="body1" component="p" sx={{ color: theme.palette.text.primary }}>
+                                    {language.level}
+                                </Typography>
+                            </Box>
+                        </Grid>
                     ))}
-                </Box>
+                </Grid>
             </Box>
             <Box>
                 <Typography variant="h3_1" component="p" sx={{color: theme.palette.text.primary}}>
                     Hobbies
                 </Typography>
-                <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', gap: { xs: '2.5rem', md:'1.5rem', lg: '1.8rem' }, mt: '1rem' }} >
+                {/* <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', gap: { xs: '2.5rem', md:'1.5rem', lg: '1.8rem' }, mt: '1rem' }} >
                     {hobbies.map((hobby) => (
                         <Box key={hobby.hobby}>
                             <Box sx={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center'}}>
@@ -92,7 +94,30 @@ function  HobbiesAndLanguage() {
                             </Box>
                         </Box>
                     ))}
-                </Box>
+                </Box> */}
+                <Grid container spacing={{xs: 4}}>
+                    {hobbies.map((hobby) => (
+                        <Grid item xs={6} sm={4} md={3} key={hobby.hobby}>
+                            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', width: '110px' }}>
+                                <Box variant="body1" component="img" src={hobby.icon} sx={{
+                                    color: theme.palette.text.primary,
+                                    height: getIconSize(hobby.icon),
+                                    width: getIconSize(hobby.icon),
+                                }}>
+                                </Box>
+                                <Typography variant="" component="p" sx={{
+                                    color: theme.palette.text.primary,
+                                    fontWeight: '700',
+                                    fontSize: { xs: '1.125rem', md: '1.5rem' },
+                                    fontFamily: '"Old Standard TT", serif',
+                                    textAlign: 'center',
+                                }}>
+                                    {hobby.hobby}
+                                </Typography>
+                            </Box>
+                        </Grid>
+                    ))}
+                </Grid>
             </Box>
         </Box>
      );
