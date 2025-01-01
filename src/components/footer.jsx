@@ -5,14 +5,14 @@ import theme from "../theme.js";
 function Footer(){
     return (
         <footer>
-            <Page height={{xs:'9rem', sm:'6rem'}} background={theme.palette.background.tertiary}>
+            <Page height={{xs:'9rem', sm:'5rem'}} background={theme.palette.background.tertiary}>
                 <Box sx={{ 
                     display: 'flex', 
                     flexDirection: 'row', 
                     justifyContent: 'space-between' , 
                     alignItems: 'center', 
-                    gap: '1rem', 
-                    padding: '2rem 3rem'
+                    gap: '2rem', 
+                    padding: {xs:'1.5rem 3rem', sm:'1rem 2rem' ,md:'2rem 2rem'},
                 }}>
                     <Typography component="p" 
                     sx={{
