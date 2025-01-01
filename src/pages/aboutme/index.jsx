@@ -1,4 +1,5 @@
 // 1. Core/Library Imports
+import * as React from 'react';
 import { Box, Grid2 as Grid, Typography } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
@@ -19,8 +20,32 @@ import theme from '../../theme.js';
 // 4. Asset Imports
 import ghostyMicron from './assets/images/ghosty-books-micron.png';
 
+const returnHobbiesPageHeight = (width) => {
+    if(width < 400) return '110rem';
+    if(width >= 400 && width < 450) return '97rem';
+    if(width >= 450 && width < 500) return '90rem';
+    if(width >= 500 && width < 600) return '71rem';
+    if(width >= 600 && width < 700) return '80rem';
+    if(width >= 700 && width < 774) return '75rem';
+    if(width >= 774 && width < 900) return '65rem';
+    if(width >= 900 && width < 977) return '57rem';
+    if(width >= 977) return '48rem';
+}
+
+
+
 
 function AboutMePage() {
+
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
+    React.useEffect(() => {
+          const handleResize = () => setWindowWidth(window.innerWidth);
+      
+          window.addEventListener('resize', handleResize);
+          return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return ( 
         <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
             <Navbar />
@@ -185,13 +210,7 @@ function AboutMePage() {
             </Page>
             <Page background={theme.palette.background.primary}>
                 <Box sx={{ 
-                    height: { xs: '110rem', sm:'75rem', md:'48rem' ,lg:'48rem' }, 
-                    [theme.breakpoints.between(774, 900)]: {
-                        height: '65rem',
-                    },
-                    [theme.breakpoints.between(900, 977)]: {
-                        height: '57rem',
-                    },
+                    height: returnHobbiesPageHeight(windowWidth),
                     display: 'flex', 
                     flexDirection: 'row', 
                     justifyContent: { xs:'start', md:'end'} 
