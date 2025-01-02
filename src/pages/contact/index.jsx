@@ -5,12 +5,29 @@ import Footer from "../../components/footer.jsx";
 import Page from "../../components/page.jsx";
 import theme from "../../theme.js";
 import cafeMicron from './assets/images/cafe-micron.png';
+import { BorderColor } from "@mui/icons-material";
 
 const StyledTextField =styled(TextField)(() => ({
     '& .MuiInputBase-root': {
-        backgroundColor: theme.palette.background.primary,
-        color: theme.palette.text.primary,
+    color: theme.palette.background.primary, // Default text color
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: theme.palette.background.primary, // Default border color
     },
+    '&:hover fieldset': {
+      borderColor: theme.palette.background.primary, // Border color on hover
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: theme.palette.background.primary, // Border color on focus
+    },
+  },
+  '& .MuiInputLabel-root': {
+    color: theme.palette.background.primary, // Default label color
+  },
+  '& .MuiInputLabel-root.Mui-focused': {
+    color: theme.palette.background.primary, // Label color on focus
+  },
 }));
 
 function Contact() {
@@ -111,7 +128,7 @@ function Contact() {
                                 helperText={errors.name}
                                 sx={{ marginBottom: '1.5rem' }}
                                 />
-                                <TextField
+                                <StyledTextField
                                 label="Email"
                                 name="email"
                                 fullWidth
@@ -121,7 +138,7 @@ function Contact() {
                                 helperText={errors.email}
                                 sx={{ marginBottom: '1.5rem' }}
                                 />
-                                <TextField
+                                <StyledTextField
                                 label="Message"
                                 name="message"
                                 fullWidth
@@ -138,7 +155,7 @@ function Contact() {
                                 variant="contained"
                                 color="primary"
                                 fullWidth
-                                sx={{ padding: '0.75rem', fontSize: '1rem' }}
+                                sx={{ padding: '0.75rem', fontSize: '1rem', backgroundColor: theme.palette.text.primary, color: theme.palette.background.primary }}
                                 >
                                 Send Message
                                 </Button>
