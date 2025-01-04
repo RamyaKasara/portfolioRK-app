@@ -21,13 +21,31 @@ const StyledTextField =styled(TextField)(() => ({
     '&.Mui-focused fieldset': {
       borderColor: theme.palette.background.primary, // Border color on focus
     },
+    '&.Mui-error fieldset': {
+      borderColor: theme.palette.background.primary, // Prevent red border on error
+    },
   },
   '& .MuiInputLabel-root': {
     color: theme.palette.background.primary, // Default label color
   },
+  '& .MuiInputLabel-root.Mui-error': {
+    color: theme.palette.background.primary, // Prevent red color for label on error
+  },
   '& .MuiInputLabel-root.Mui-focused': {
     color: theme.palette.background.primary, // Label color on focus
   },
+  '& .MuiFormHelperText-root.Mui-error': {
+    color: theme.palette.background.primary, // White error message color
+  },
+}));
+
+const CustomSnackbar = styled(Snackbar)(({ theme }) => ({
+    '& .MuiSnackbarContent-root': {
+      backgroundColor: theme.palette.text.primary,
+      color: theme.palette.background.primary,              // White text color
+      fontSize: '1rem',
+      fontWeight: '500',
+    },
 }));
 
 function Contact() {
@@ -74,8 +92,6 @@ function Contact() {
                   { name: 'message', value: formData.message }
                 ]
             };
-
-            console.log("constantsObj", constantsObj);
 
             const portalId = constantsObj.hubspotObject.portalKey;
             const formId = constantsObj.hubspotObject.formKey;
@@ -198,7 +214,14 @@ function Contact() {
                                         variant="contained"
                                         color="primary"
                                         fullWidth
-                                        sx={{ padding: '0.75rem', fontSize: '1rem', backgroundColor: theme.palette.text.primary, color: theme.palette.background.primary }}
+                                        sx={{ 
+                                            padding: '0.75rem', 
+                                            fontSize: '1rem', 
+                                            backgroundColor: theme.palette.text.primary, 
+                                            color: theme.palette.background.primary, 
+                                            '&:hover': { borderColor: theme.palette.background.primary },
+                                            '&:focus': { outline: '4px ${theme.palette.background.primary}' }
+                                        }}
                                         >
                                         Send Message
                                         </Button>
@@ -216,7 +239,7 @@ function Contact() {
                 </Grid>
             </Page>
             <Footer />
-            <Snackbar
+            <CustomSnackbar
             open={submitFailed}
             onClose={() => setSubmitFailStatus(false)}
             message="Form submission failed"
