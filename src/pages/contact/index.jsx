@@ -37,6 +37,8 @@ function Contact() {
         email: '',
         message: '',
     });
+
+    const [isSubmitted, setIsSubmitted] = useState(false);
     
     const [errors, setErrors] = useState({});
     
@@ -81,12 +83,11 @@ function Contact() {
             });
 
             if (response.ok) {
-                alert('Form submitted successfully!');
+                setIsSubmitted(true);
             } else {
                 alert('Failed to submit the form. Please try again.');
             }
 
-            alert('Message sent successfully!');
             setFormData({ name: '', email: '', message: '' }); // Reset form
         }
     };
@@ -137,55 +138,67 @@ function Contact() {
                         sx={{
                             display: 'flex',
                             flexDirection: 'column',
+                            justifyContent: 'center',
                             gap: '1rem',
                             textAlign: 'center',
                             backgroundColor: theme.palette.background.tertiary,
                             padding: '2rem',
+                            height: (isSubmitted) ? '28.75rem' : 'auto',
+                            borderRadius: '10px',
                         }}
                         >
-                            <form onSubmit={handleSubmit} noValidate>
-                                <StyledTextField
-                                label="Name"
-                                name="name"
-                                fullWidth
-                                value={formData.name}
-                                onChange={handleChange}
-                                error={!!errors.name}
-                                helperText={errors.name}
-                                sx={{ marginBottom: '1.5rem' }}
-                                />
-                                <StyledTextField
-                                label="Email"
-                                name="email"
-                                fullWidth
-                                value={formData.email}
-                                onChange={handleChange}
-                                error={!!errors.email}
-                                helperText={errors.email}
-                                sx={{ marginBottom: '1.5rem' }}
-                                />
-                                <StyledTextField
-                                label="Message"
-                                name="message"
-                                fullWidth
-                                multiline
-                                rows={4}
-                                value={formData.message}
-                                onChange={handleChange}
-                                error={!!errors.message}
-                                helperText={errors.message}
-                                sx={{ marginBottom: '1.5rem' }}
-                                />
-                                <Button
-                                type="submit"
-                                variant="contained"
-                                color="primary"
-                                fullWidth
-                                sx={{ padding: '0.75rem', fontSize: '1rem', backgroundColor: theme.palette.text.primary, color: theme.palette.background.primary }}
-                                >
-                                Send Message
-                                </Button>
-                            </form>
+                            {
+                                (!isSubmitted) &&
+                                <form onSubmit={handleSubmit} noValidate>
+                                    <StyledTextField
+                                    label="Name"
+                                    name="name"
+                                    fullWidth
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    error={!!errors.name}
+                                    helperText={errors.name}
+                                    sx={{ marginBottom: '1.5rem' }}
+                                    />
+                                    <StyledTextField
+                                    label="Email"
+                                    name="email"
+                                    fullWidth
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    error={!!errors.email}
+                                    helperText={errors.email}
+                                    sx={{ marginBottom: '1.5rem' }}
+                                    />
+                                    <StyledTextField
+                                    label="Message"
+                                    name="message"
+                                    fullWidth
+                                    multiline
+                                    rows={4}
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    error={!!errors.message}
+                                    helperText={errors.message}
+                                    sx={{ marginBottom: '1.5rem' }}
+                                    />
+                                    <Button
+                                    type="submit"
+                                    variant="contained"
+                                    color="primary"
+                                    fullWidth
+                                    sx={{ padding: '0.75rem', fontSize: '1rem', backgroundColor: theme.palette.text.primary, color: theme.palette.background.primary }}
+                                    >
+                                    Send Message
+                                    </Button>
+                                </form>
+                            }
+                            {
+                                (isSubmitted) &&
+                                <Typography variant="h3_1" component="h2" sx={{color: theme.palette.background.primary}}>
+                                    Thank you for your message!
+                                </Typography>
+                            }
                         </Box>
                     </Box>
                     </Grid>
