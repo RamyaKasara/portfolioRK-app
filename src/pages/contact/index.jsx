@@ -122,13 +122,13 @@ function Contact() {
     return (
         <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
             <Navbar />
-            <Page height='calc(100vh - 188px)'>  
+            <Page height={{ xs:'100%', md:'calc(100vh - 188px)'}}>  
                 <Grid container spacing={2}
                     sx={{
                     height: { md: '38rem', lg: '43rem' },
                     margin: { xs: '2rem' },
                     }}>
-                    <Grid item size={{ xs:12, sm:6, md:6 }} sx={{ height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+                    <Grid item size={{ xs:12, sm:12, md:6 }} sx={{ height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                         <Box 
                         sx={{
                         width: '100%',
@@ -143,7 +143,7 @@ function Contact() {
                                 alt="cafe-micron"
                                 sx={{
                                     paddingTop: '5px',
-                                    height: { xs: '20rem'},
+                                    height: { xs: '23rem', sm:'28rem'},
                                     minHeight: { md: '35rem', lg: '40rem' }, // Responsive height
                                 }}
                             />
@@ -155,7 +155,7 @@ function Contact() {
                         margin: { md:'2rem', lg:'2rem 3rem'},
                         display: 'flex', flexDirection: 'column',
                         gap: '2rem',
-                        width: { xs: '90%', md: '100%' },
+                        width: { xs: '90%', sm:'90%', md: '70%' },
                         textAlign: 'justify',
                         }}>
                             <Typography variant="h3_1" component="h1" sx={{color: theme.palette.text.primary}}>
