@@ -3,9 +3,9 @@ import { styled, Box, Grid2 as Grid, Typography, TextField, Button } from "@mui/
 import Navbar from "../../components/navbar.jsx";
 import Footer from "../../components/footer.jsx";
 import Page from "../../components/page.jsx";
+import constantsObj from "../../constants.js";
 import theme from "../../theme.js";
 import cafeMicron from './assets/images/cafe-micron.png';
-import { BorderColor } from "@mui/icons-material";
 
 const StyledTextField =styled(TextField)(() => ({
     '& .MuiInputBase-root': {
@@ -55,11 +55,37 @@ function Contact() {
         return Object.keys(newErrors).length === 0;
     };
     
-    const handleSubmit = (e) => {
+    const handleSubmit =  async (e) => {
         e.preventDefault();
         if (validate()) {
-            console.log('Form submitted:', formData);
-            // Add your form submission logic here (e.g., API call)
+
+            const data = {
+                fields: [
+                  { name: 'firstname', value: formData.name },
+                  { name: 'email', value: formData.email },
+                  { name: 'message', value: formData.message }
+                ]
+            };
+
+            console.log("constantsObj", constantsObj);
+
+            const portalId = constantsObj.hubspotObject.portalKey;
+            const formId = constantsObj.hubspotObject.formKey;
+
+            const response = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`, {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('Form submitted successfully!');
+            } else {
+                alert('Failed to submit the form. Please try again.');
+            }
+
             alert('Message sent successfully!');
             setFormData({ name: '', email: '', message: '' }); // Reset form
         }

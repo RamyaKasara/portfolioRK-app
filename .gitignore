@@ -24,3 +24,12 @@ dist/
 
 # Optional: ignore Windows-specific system files
 Thumbs.db
+
+# Added these files myself to ignore:
+
+# Ignore environment configuration files
+.env.local
+.env.*   # This will ignore .env files such as .env.production, .env.staging, etc.
+
+# Ignore constants file if it contains sensitive data
+constants.js
