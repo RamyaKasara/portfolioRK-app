@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { styled, Box, Grid2 as Grid, Typography, TextField, Button } from "@mui/material";
+import { styled, Box, Grid2 as Grid, Typography, TextField, Button, Slide, Snackbar } from "@mui/material";
 import Navbar from "../../components/navbar.jsx";
 import Footer from "../../components/footer.jsx";
 import Page from "../../components/page.jsx";
@@ -39,8 +39,14 @@ function Contact() {
     });
 
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [submitFailed, setSubmitFailStatus] = useState(false);
     
     const [errors, setErrors] = useState({});
+
+     // Slide transition (you can set direction as 'up', 'down', 'left', or 'right')
+    const SlideTransition = (props) => {
+        return <Slide {...props} direction="up" />;
+    };
     
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -74,18 +80,23 @@ function Contact() {
             const portalId = constantsObj.hubspotObject.portalKey;
             const formId = constantsObj.hubspotObject.formKey;
 
-            const response = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`, {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+            try{
 
-            if (response.ok) {
-                setIsSubmitted(true);
-            } else {
-                alert('Failed to submit the form. Please try again.');
+                const response = await fetch(`httpss://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`, {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    setIsSubmitted(true);
+                    setSubmitFailStatus(false);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                setSubmitFailStatus(true);
             }
 
             setFormData({ name: '', email: '', message: '' }); // Reset form
@@ -95,7 +106,7 @@ function Contact() {
     return (
         <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
             <Navbar />
-            <Page>  
+            <Page height='calc(100vh - 188px)'>  
                 <Grid container spacing={2}
                     sx={{
                     height: { md: '38rem', lg: '43rem' },
@@ -123,88 +134,95 @@ function Contact() {
                         </Box>
                     </Grid>
                     <Grid item size={{ xs: 12, md: 6 }}  sx={{  height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Box 
-                    sx={{
-                    margin: { md:'2rem', lg:'2rem 3rem'},
-                    display: 'flex', flexDirection: 'column',
-                    gap: '2rem',
-                    width: { xs: '90%', md: '100%' },
-                    textAlign: 'justify',
-                    }}>
-                        <Typography variant="h3_1" component="h1" sx={{color: theme.palette.text.primary}}>
-                            Contact Me 
-                        </Typography>
-                        <Box
+                        <Box 
                         sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            gap: '1rem',
-                            textAlign: 'center',
-                            backgroundColor: theme.palette.background.tertiary,
-                            padding: '2rem',
-                            height: (isSubmitted) ? '28.75rem' : 'auto',
-                            borderRadius: '10px',
-                        }}
-                        >
-                            {
-                                (!isSubmitted) &&
-                                <form onSubmit={handleSubmit} noValidate>
-                                    <StyledTextField
-                                    label="Name"
-                                    name="name"
-                                    fullWidth
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    error={!!errors.name}
-                                    helperText={errors.name}
-                                    sx={{ marginBottom: '1.5rem' }}
-                                    />
-                                    <StyledTextField
-                                    label="Email"
-                                    name="email"
-                                    fullWidth
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    error={!!errors.email}
-                                    helperText={errors.email}
-                                    sx={{ marginBottom: '1.5rem' }}
-                                    />
-                                    <StyledTextField
-                                    label="Message"
-                                    name="message"
-                                    fullWidth
-                                    multiline
-                                    rows={4}
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    error={!!errors.message}
-                                    helperText={errors.message}
-                                    sx={{ marginBottom: '1.5rem' }}
-                                    />
-                                    <Button
-                                    type="submit"
-                                    variant="contained"
-                                    color="primary"
-                                    fullWidth
-                                    sx={{ padding: '0.75rem', fontSize: '1rem', backgroundColor: theme.palette.text.primary, color: theme.palette.background.primary }}
-                                    >
-                                    Send Message
-                                    </Button>
-                                </form>
-                            }
-                            {
-                                (isSubmitted) &&
-                                <Typography variant="h3_1" component="h2" sx={{color: theme.palette.background.primary}}>
-                                    Thank you for your message!
-                                </Typography>
-                            }
+                        margin: { md:'2rem', lg:'2rem 3rem'},
+                        display: 'flex', flexDirection: 'column',
+                        gap: '2rem',
+                        width: { xs: '90%', md: '100%' },
+                        textAlign: 'justify',
+                        }}>
+                            <Typography variant="h3_1" component="h1" sx={{color: theme.palette.text.primary}}>
+                                Contact Me 
+                            </Typography>
+                            <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                gap: '1rem',
+                                textAlign: 'center',
+                                backgroundColor: theme.palette.background.tertiary,
+                                padding: '2rem',
+                                height: (isSubmitted) ? '28.75rem' : 'auto',
+                                borderRadius: '10px',
+                            }}
+                            >
+                                {
+                                    (!isSubmitted) &&
+                                    <form onSubmit={handleSubmit} noValidate>
+                                        <StyledTextField
+                                        label="Name"
+                                        name="name"
+                                        fullWidth
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        error={!!errors.name}
+                                        helperText={errors.name}
+                                        sx={{ marginBottom: '1.5rem' }}
+                                        />
+                                        <StyledTextField
+                                        label="Email"
+                                        name="email"
+                                        fullWidth
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        error={!!errors.email}
+                                        helperText={errors.email}
+                                        sx={{ marginBottom: '1.5rem' }}
+                                        />
+                                        <StyledTextField
+                                        label="Message"
+                                        name="message"
+                                        fullWidth
+                                        multiline
+                                        rows={4}
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        error={!!errors.message}
+                                        helperText={errors.message}
+                                        sx={{ marginBottom: '1.5rem' }}
+                                        />
+                                        <Button
+                                        type="submit"
+                                        variant="contained"
+                                        color="primary"
+                                        fullWidth
+                                        sx={{ padding: '0.75rem', fontSize: '1rem', backgroundColor: theme.palette.text.primary, color: theme.palette.background.primary }}
+                                        >
+                                        Send Message
+                                        </Button>
+                                    </form>
+                                }
+                                {
+                                    (isSubmitted) &&
+                                    <Typography variant="h3_1" component="h2" sx={{color: theme.palette.background.primary}}>
+                                        Thank you for your message!
+                                    </Typography>
+                                }
+                            </Box>
                         </Box>
-                    </Box>
                     </Grid>
                 </Grid>
             </Page>
             <Footer />
+            <Snackbar
+            open={submitFailed}
+            onClose={() => setSubmitFailStatus(false)}
+            message="Form submission failed"
+            autoHideDuration={3000}  // Hide after 3 seconds
+            TransitionComponent={SlideTransition} // Use Slide transition
+            />
         </div>
     );
 }
