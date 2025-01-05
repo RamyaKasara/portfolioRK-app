@@ -111,11 +111,17 @@ function Navbar() {
         <>
             <NavigationAppBar position="sticky" style={{flexShrink: 0}}>
                 <Toolbar>
-                    <Box sx={{ height: '100px', mr: '1rem' }} component="img" src={fishMicron} alt="fish-micron" />
+                    <Box sx={{ height: '100px', mr: '1rem', cursor: 'pointer' }} 
+                    component="img" 
+                    src={fishMicron} 
+                    alt="fish-micron"
+                    onClick={() => navigate('/')} 
+                    />
                     <Typography
                         variant="h3_1"
                         component="div"
-                        sx={{ flexGrow: 1 }}
+                        sx={{ flexGrow: 1, cursor: 'pointer' }}
+                        onClick={() => navigate('/')}
                     >
                         Ramya Kasara
                     </Typography>
