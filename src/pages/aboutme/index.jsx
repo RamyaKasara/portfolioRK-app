@@ -37,6 +37,8 @@ const returnHobbiesPageHeight = (width) => {
 
 function AboutMePage() {
 
+    const linkedInUrl = "https://www.linkedin.com/in/ramya-kasarabada-322734239/";
+
     const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
     React.useEffect(() => {
@@ -129,23 +131,24 @@ function AboutMePage() {
                                     </Grid>
 
                                     {/* Mail */}
-                                    <Grid container item xs={12}>
+                                    {/* <Grid container item xs={12}>
                                         <Grid item xs={3}>
                                             <EmailIcon sx={{ fontSize: '1.5rem', color: theme.palette.background.primary }} />
                                         </Grid>
                                         <Grid item xs={9}>
                                             <div style={{ margin: '0' }}>Email me</div>
                                         </Grid>
-                                    </Grid>
+                                    </Grid> */}
 
                                     {/* LinkedIn */}
                                     <Grid container item xs={12}>
                                         <Grid item xs={3}>
-                                            <LinkedInIcon sx={{ fontSize: '1.5rem', color: theme.palette.background.primary }} />
+                                            <LinkedInIcon sx={{ fontSize: '1.5rem', color: theme.palette.background.primary, cursor: 'pointer', mt: '2px' }} 
+                                             onClick={() => window.open(linkedInUrl, "_blank") } />
                                         </Grid>
                                         <Grid item xs={9}>
                                             <a
-                                                href="https://www.linkedin.com/in/ramya-kasarabada-322734239/"
+                                                href={linkedInUrl}
                                                 target="_blank"
                                                 rel="noreferrer"
                                                 style={{ textDecoration: 'none', color: theme.palette.background.primary }}
