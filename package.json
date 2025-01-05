@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build", // Vite automatically uses .env.production during a production build
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist" // When running npm run deploy, the production build will use .env.production
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
