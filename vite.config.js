@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5000 // Change this to your desired port number
-  }
+  },
+  base: '/portfolioRK-app/'
 })

@@ -139,7 +139,7 @@ function Navbar() {
                     {   !isMobile &&
                         (<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                             <RegularButton color="inherit" onClick={() => navigate('/about-me')} >About Me</RegularButton>
-                            <RegularButton color="inherit">Resume</RegularButton>
+                            {/* <RegularButton color="inherit">Resume</RegularButton> */}
                             <TagButton color="inherit"onClick={() => navigate('/contact')}>Hit Me Up!</TagButton>
                         </Box>)
                     }
@@ -155,7 +155,7 @@ function Navbar() {
                             <Button color="inherit">Contact</Button> */}
                         {/* Menu items will stack vertically */}
                     <StyledMenuItem onClick={() => { navigate('/about-me'); toggleMenuClose(); }}>About Me</StyledMenuItem>
-                        <StyledMenuItem onClick={toggleMenuClose}>Resume</StyledMenuItem>
+                        {/* <StyledMenuItem onClick={toggleMenuClose}>Resume</StyledMenuItem> */}
                         <StyledMenuItem onClick={() => { navigate('/contact'); toggleMenuClose(); }}>Hit Me Up!</StyledMenuItem>
                     </StyledMenu>)
                 }

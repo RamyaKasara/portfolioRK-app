@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import HomePage from './pages/homepage';
 import AboutMePage from './pages/aboutme';
@@ -13,8 +13,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/about-me" element={<AboutMePage />} />
-          <Route path='/contact' element={<ContactPage />} />
+          <Route path="about-me" element={<AboutMePage />} />
+          <Route path='contact' element={<ContactPage />} />
         </Routes>
       </Router>
     </>
