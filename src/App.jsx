@@ -4,6 +4,7 @@ import './App.css'
 import HomePage from './pages/homepage';
 import AboutMePage from './pages/aboutme';
 import ContactPage from './pages/contact';
+import ScrollToTop from './components/scrollToTop.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="about-me" element={<AboutMePage />} />
